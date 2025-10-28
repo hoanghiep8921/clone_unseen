@@ -484,7 +484,7 @@
                             autoAlpha: 1,
                             ease: "power2.inOut",
                             delay: .5
-                        }), o.urlParams.has("skiploader") && this.hide()
+                        }), this.onEnterNoAudioButtonClick()
                     })), w(this, "buildEyes", (() => {
                         this.createEyelidTl(), this.getBtnCenter(), n.on("mouseenter", this.enterButton.dom.el, this.eyesMouseEnter), n.on("mouseleave", this.enterButton.dom.el, this.eyesMouseLeave), n.on(o.events.RESIZE, this.onResize), n.on(o.events.MOUSEMOVE, this.onPointerMove), o.RAFCollection.add(this.onRAF, 3)
                     })), w(this, "showEyes", (() => {
