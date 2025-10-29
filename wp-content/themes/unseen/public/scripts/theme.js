@@ -991,15 +991,9 @@
               heart: p('.js-eyes-heart'),
             }),
             (this.enterButton = new y(document.querySelector('.js-enter-btn'))),
-            (this.enterNav1 = document.querySelector(
-              '.js-enter-nav1'
-            )),
-            (this.enterNav2 = document.querySelector(
-              '.js-enter-nav2'
-            )),
-            (this.enterNav3 = document.querySelector(
-              '.js-enter-nav3'
-            )),
+            (this.enterNav1 = document.querySelector('.js-enter-nav1')),
+            (this.enterNav2 = document.querySelector('.js-enter-nav2')),
+            (this.enterNav3 = document.querySelector('.js-enter-nav3')),
             (this.enterNoAudioButton = document.querySelector(
               '.js-enter-no-audio-btn'
             )),
@@ -1012,21 +1006,9 @@
             n.on('AssetsProgress', this.throttledProgressFunc),
             n.on('AssetLoader:afterResolve', this.onAssetsLoaded),
             n.on('click', this.enterButton.dom.el, this.onEnterButtonClick),
-            n.on(
-              'click',
-              this.enterNav1,
-              this.onEnterNoAudioButtonClick
-            ),
-            n.on(
-              'click',
-              this.enterNav2,
-              this.onEnterNoAudioButtonClick
-            ),
-            n.on(
-              'click',
-              this.enterNav3,
-              this.onEnterNoAudioButtonClick
-            ),
+            n.on('click', this.enterNav1, this.onEnterNoAudioButtonClick),
+            n.on('click', this.enterNav2, this.onEnterNoAudioButtonClick),
+            n.on('click', this.enterNav3, this.onEnterNoAudioButtonClick),
             n.on(
               'click',
               this.enterNoAudioButton,
@@ -14498,10 +14480,9 @@
               }
 
               const modalImages = modal.querySelector('.modal-images')
+              const modalTitle = modal.querySelector('.modal-title')
+              const modalDescription = modal.querySelector('.modal-description')
               const closeModal = modal.querySelector('.close-modal')
-              const closeModalButton = modal.querySelector(
-                '.close-modal-button'
-              )
 
               if (!modalImages) {
                 console.error('Modal images container not found!')
@@ -14520,6 +14501,14 @@
                 modalImages.appendChild(img)
               })
 
+              // Cập nhật tiêu đề và mô tả
+              if (modalTitle) {
+                modalTitle.textContent = project.project.title
+              }
+              if (modalDescription) {
+                modalDescription.textContent = project.project.description
+              }
+
               // Hiện modal
               modal.style.display = 'block'
               document.body.style.overflow = 'hidden' // Ngăn scroll nền
@@ -14531,60 +14520,12 @@
               }
 
               closeModal.onclick = close
-              closeModalButton.onclick = close
 
               // Click ngoài modal
               modal.onclick = event => {
                 if (event.target === modal) close()
               }
             })
-
-          Rs(this, 'initModal', project => {
-            const modal = document.getElementById('image-modal')
-            if (!modal) {
-              console.error('Modal element #image-modal not found!')
-              return
-            }
-
-            const modalImages = modal.querySelector('.modal-images')
-            const closeModal = modal.querySelector('.close-modal')
-            const closeModalButton = modal.querySelector('.close-modal-button')
-
-            if (!modalImages) {
-              console.error('Modal images container not found!')
-              return
-            }
-
-            // Xóa ảnh cũ
-            modalImages.innerHTML = ''
-
-            // Thêm ảnh mới
-            project.images.forEach(image => {
-              const img = document.createElement('img')
-              img.src = image.image
-              img.alt = project.project.title
-              img.loading = 'lazy'
-              modalImages.appendChild(img)
-            })
-
-            // Hiện modal
-            modal.style.display = 'block'
-            document.body.style.overflow = 'hidden' // Ngăn scroll nền
-
-            // Đóng modal
-            const close = () => {
-              modal.style.display = 'none'
-              document.body.style.overflow = ''
-            }
-
-            closeModal.onclick = close
-            closeModalButton.onclick = close
-
-            // Click ngoài modal
-            modal.onclick = event => {
-              if (event.target === modal) close()
-            }
-          })
           Rs(this, 'onPreSceneRaf', () => {
             this.smoothMouse.lerp(o.mouse.glNormalized, 0.075),
               this.smoothMouse2.lerp(o.mouse.glNormalized, 0.02),
@@ -17125,34 +17066,28 @@
             this.buildDropdownTL()
         }
         initModal(project) {
-          const modal = document.getElementById('image-modal')
-          const modalImages = modal.querySelector('.modal-images')
-          const closeModal = modal.querySelector('.close-modal')
-          const closeModalButton = modal.querySelector('.close-modal-button')
-
-          modalImages.innerHTML = ''
-
-          project.images.forEach(image => {
-            const img = document.createElement('img')
-            img.src = image.image
-            modalImages.appendChild(img)
-          })
-
-          modal.style.display = 'block'
-
-          closeModal.onclick = () => {
-            modal.style.display = 'none'
-          }
-
-          closeModalButton.onclick = () => {
-            modal.style.display = 'none'
-          }
-
-          window.onclick = event => {
-            if (event.target == modal) {
-              modal.style.display = 'none'
-            }
-          }
+          // const modal = document.getElementById('image-modal')
+          // const modalImages = modal.querySelector('.modal-images')
+          // const closeModal = modal.querySelector('.close-modal')
+          // const closeModalButton = modal.querySelector('.close-modal-button')
+          // modalImages.innerHTML = ''
+          // project.images.forEach(image => {
+          //   const img = document.createElement('img')
+          //   img.src = image.image
+          //   modalImages.appendChild(img)
+          // })
+          // modal.style.display = 'block'
+          // closeModal.onclick = () => {
+          //   modal.style.display = 'none'
+          // }
+          // closeModalButton.onclick = () => {
+          //   modal.style.display = 'none'
+          // }
+          // window.onclick = event => {
+          //   if (event.target == modal) {
+          //     modal.style.display = 'none'
+          //   }
+          // }
         }
         setInitialStyles() {
           ;(this.originalHeight = this.dom.filter.offsetHeight),

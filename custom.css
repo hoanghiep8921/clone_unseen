@@ -37,10 +37,20 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content h2 {
+.modal-title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
   text-align: center;
-  margin-bottom: 20px;
   font-family: 'SaolDisplay-Light', serif;
+}
+
+.modal-description {
+  font-size: 1.2em;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .close-modal {
