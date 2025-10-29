@@ -14436,24 +14436,136 @@
             }),
             Rs(this, 'onClick', e => {
               console.log('Click ccc')
-              this.allowControl &&
-                e.event.target.hasAttribute('asscroll-container') &&
-                (this.dragging
-                  ? (this.dragging = !1)
-                  : this.hoveredItem &&
-                    ((this.toProjectTransitionData.bgColor =
-                      this.hoveredItem.bgColor),
-                    (this.toProjectTransitionData.lightMode =
-                      this.hoveredItem.lightMode),
-                    this.hoveredItem.isExternal
-                      ? window.open(this.hoveredItem.url, '_blank')
-                      : o.Highway.redirect(this.hoveredItem.url, 'toProject')))
+              if (!this.allowControl) return
+
+              const target = e.event.target
+              if (!target.hasAttribute('asscroll-container')) return
+
+              if (this.dragging) {
+                this.dragging = false
+                return
+              }
+
+              if (this.hoveredItem) {
+                // Lấy dữ liệu project từ window.projects
+                const projectData = window.projects.find(
+                  p => p.project.title === this.hoveredItem.name
+                )
+
+                if (projectData) {
+                  // Gọi hàm mở modal (bạn đã viết sẵn)
+                  this.initModal(projectData)
+                }
+
+                // Vẫn giữ transition màu nền (nếu muốn hiệu ứng mượt)
+                this.toProjectTransitionData.bgColor = this.hoveredItem.bgColor
+                this.toProjectTransitionData.lightMode =
+                  this.hoveredItem.lightMode
+
+                // Kích hoạt transition (nếu bạn vẫn muốn hiệu ứng màn hình chuyển màu)
+                // o.Highway.redirect(...) sẽ không gọi nữa
+              }
             }),
-            Rs(this, 'onPreSceneRaf', () => {
-              this.smoothMouse.lerp(o.mouse.glNormalized, 0.075),
-                this.smoothMouse2.lerp(o.mouse.glNormalized, 0.02),
-                this.updateCamera()
-            }),
+            Rs(this, 'initModal', project => {
+              const modal = document.getElementById('image-modal')
+              if (!modal) {
+                console.error('Modal element #image-modal not found!')
+                return
+              }
+
+              const modalImages = modal.querySelector('.modal-images')
+              const closeModal = modal.querySelector('.close-modal')
+              const closeModalButton = modal.querySelector(
+                '.close-modal-button'
+              )
+
+              if (!modalImages) {
+                console.error('Modal images container not found!')
+                return
+              }
+
+              // Xóa ảnh cũ
+              modalImages.innerHTML = ''
+
+              // Thêm ảnh mới
+              project.images.forEach(image => {
+                const img = document.createElement('img')
+                img.src = image.image
+                img.alt = project.project.title
+                img.loading = 'lazy'
+                modalImages.appendChild(img)
+              })
+
+              // Hiện modal
+              modal.style.display = 'block'
+              document.body.style.overflow = 'hidden' // Ngăn scroll nền
+
+              // Đóng modal
+              const close = () => {
+                modal.style.display = 'none'
+                document.body.style.overflow = ''
+              }
+
+              closeModal.onclick = close
+              closeModalButton.onclick = close
+
+              // Click ngoài modal
+              modal.onclick = event => {
+                if (event.target === modal) close()
+              }
+            })
+
+          Rs(this, 'initModal', project => {
+            const modal = document.getElementById('image-modal')
+            if (!modal) {
+              console.error('Modal element #image-modal not found!')
+              return
+            }
+
+            const modalImages = modal.querySelector('.modal-images')
+            const closeModal = modal.querySelector('.close-modal')
+            const closeModalButton = modal.querySelector('.close-modal-button')
+
+            if (!modalImages) {
+              console.error('Modal images container not found!')
+              return
+            }
+
+            // Xóa ảnh cũ
+            modalImages.innerHTML = ''
+
+            // Thêm ảnh mới
+            project.images.forEach(image => {
+              const img = document.createElement('img')
+              img.src = image.image
+              img.alt = project.project.title
+              img.loading = 'lazy'
+              modalImages.appendChild(img)
+            })
+
+            // Hiện modal
+            modal.style.display = 'block'
+            document.body.style.overflow = 'hidden' // Ngăn scroll nền
+
+            // Đóng modal
+            const close = () => {
+              modal.style.display = 'none'
+              document.body.style.overflow = ''
+            }
+
+            closeModal.onclick = close
+            closeModalButton.onclick = close
+
+            // Click ngoài modal
+            modal.onclick = event => {
+              if (event.target === modal) close()
+            }
+          })
+          Rs(this, 'onPreSceneRaf', () => {
+            this.smoothMouse.lerp(o.mouse.glNormalized, 0.075),
+              this.smoothMouse2.lerp(o.mouse.glNormalized, 0.02),
+              this.updateCamera()
+          }),
             Rs(this, 'onRaf', () => {
               this.butterflies.update(),
                 this.calculateVelocity(),
