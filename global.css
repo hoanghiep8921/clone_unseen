@@ -1,0 +1,448 @@
+@font-face {
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff2)
+      format('woff2'),
+    url(/wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff)
+      format('woff');
+}
+
+@font-face {
+  font-family: Saol Display;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-Light.woff2)
+      format('woff2'),
+    url(/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-Light.woff)
+      format('woff');
+}
+
+@font-face {
+  font-family: Saol Display;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-LightItalic.woff2)
+      format('woff2'),
+    url(/wp-content/themes/unseen/resources/assets/fonts/SaolDisplay-LightItalic.woff)
+      format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  /* Biến màu sắc */
+  --background-color: #ffffff;
+  --text-primary: #212529; /* Màu chữ chính đậm hơn */
+  --text-secondary: #495057; /* Màu chữ phụ nhạt hơn */
+  --accent-color: #007bff; /* Màu nhấn khi hover */
+
+  /* Biến font chữ */
+  --font-family: 'Inter', sans-serif; /* Font chính */
+
+  /* Biến khoảng cách */
+  --edge-padding: clamp(1rem, 4vw, 2.5rem); /* Khoảng cách lề responsive */
+}
+
+/* --- PHẦN 2: CSS CHÍNH CHO LOADER VÀ CÁC THÀNH PHẦN --- */
+
+.loader {
+  align-items: center;
+  background: var(--background-color);
+  color: var(--text-primary);
+  display: flex;
+  font-family: var(--font-family);
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 12000;
+  position: relative;
+
+  /* Thêm để chữ mượt hơn trên một số trình duyệt */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header (góc trái) và Menu (góc phải) --- */
+.loader-header,
+.loader-menu {
+  position: absolute;
+  top: var(--edge-padding); /* Sử dụng biến cho khoảng cách */
+  font-size: 2rem;
+  font-weight: 500;
+  z-index: 12000;
+}
+
+.loader-header {
+  left: var(--edge-padding);
+}
+
+.loader-menu {
+  right: var(--edge-padding);
+}
+
+/* Định dạng cho menu điều hướng */
+.loader-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem; /* Tạo khoảng cách giữa các mục menu */
+}
+
+.loader-menu li {
+  padding: 0;
+  margin: 0;
+}
+
+.loader-menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0; /* Tăng vùng có thể click */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt */
+}
+
+.loader-menu a:hover {
+  color: var(--accent-color);
+}
+
+/* --- Content chính ở giữa --- */
+.loader-content {
+  /* Cỡ chữ tự động thay đổi từ 1.25rem đến 2.5rem */
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.5px; /* Giảm khoảng cách ký tự cho đẹp hơn */
+}
+
+/* --- PHẦN 3: RESPONSIVE CHO MÀN HÌNH NHỎ (MOBILE) --- */
+
+@media (max-width: 768px) {
+  :root {
+    /* Giảm khoảng cách lề trên mobile */
+    --edge-padding: 1.25rem;
+  }
+
+  .loader-header {
+    /* Có thể giảm cỡ chữ header trên mobile nếu cần */
+    font-size: 0.9rem;
+  }
+
+  /* Chuyển menu thành dạng cột dọc */
+  .loader-menu ul {
+    flex-direction: column;
+    align-items: flex-end; /* Căn các mục về phía bên phải */
+    gap: 1rem;
+  }
+
+  .loader-menu {
+    /* Điều chỉnh lại vị trí menu một chút nếu cần */
+  }
+}
+
+/* --- PHẦN MỚI: ĐỊNH DẠNG CHO LỚP NỀN 3 ẢNH --- */
+
+/* Lớp chứa cho cả 3 ảnh nền */
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Dùng Flexbox để chia cột */
+  z-index: 11000;
+}
+
+/* Mỗi phần ảnh chiếm 1/3 */
+.background-slice {
+  flex: 1; /* Lệnh này làm cho cả 3 div chia đều chiều rộng */
+  height: 100%;
+  background-size: cover; /* Đảm bảo ảnh lấp đầy mà không bị méo */
+  background-position: center; /* Căn ảnh vào giữa */
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* Hiệu ứng zoom mượt */
+
+  z-index: 11000;
+  /* Hiệu ứng xuất hiện ban đầu */
+  opacity: 0;
+  animation: revealFadeIn 1s ease-out forwards;
+  animation-delay: 0.2s; /* Chờ một chút rồi mới hiện */
+}
+
+/* Hiệu ứng zoom nhẹ khi di chuột qua */
+.background-container:hover .background-slice {
+  transform: scale(1.05);
+}
+
+/* Để mỗi ảnh có animation-delay khác nhau một chút cho đẹp mắt */
+.background-slice:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.background-slice:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* --- PHẦN 3: ĐỊNH NGHĨA KEYFRAME ANIMATION --- */
+@keyframes revealFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.1); /* Hơi zoom to lúc đầu */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Trở về kích thước bình thường */
+  }
+}
+
+.loader__progress {
+  background: white;
+  overflow: hidden;
+  position: absolute;
+  transform: translateY(100%);
+  z-index: 1;
+}
+
+.loader__progress,
+.loader__progress > div {
+  height: 100%;
+  width: 100%;
+}
+
+.loader__progress > div {
+  transform: translateY(-100%);
+}
+
+.loader__inner,
+.loader__progress > div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: 12000;
+}
+
+.loader__inner {
+  flex-direction: column;
+  position: relative;
+}
+
+.loader__tagline,
+.loader__title {
+  position: relative;
+  z-index: 1;
+}
+
+.loader__eyes-container {
+  position: absolute;
+  top: -9.5rem;
+  width: 12.8rem;
+}
+
+@media (min-width: 768px) {
+  .loader__eyes-container {
+    top: -10.5rem;
+    width: 14.4rem;
+  }
+}
+
+.loader__eyes {
+  display: none;
+  height: auto;
+  transform: scale(0);
+  width: 100%;
+}
+
+.loader__title {
+  display: block;
+  font-size: 1.125rem;
+  letter-spacing: -0.025rem;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.loader__tagline {
+  font-size: 1rem;
+  letter-spacing: -0.025rem;
+  line-height: 1.15;
+  margin-bottom: 1.75rem;
+}
+
+.loader__btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: 0;
+  bottom: 4rem;
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  overflow: hidden;
+  padding: 0 0 0.1rem;
+  text-transform: uppercase;
+  z-index: 12000;
+}
+
+.loader__btn span {
+  background: #000;
+  bottom: 0;
+  display: block;
+  height: 1px;
+  position: absolute;
+  transition: transform 0.2s ease-out;
+  width: 50%;
+}
+
+.loader__btn span:first-child {
+  left: 0;
+}
+
+.loader__btn span:last-child {
+  right: 0;
+}
+
+.loader__btn:hover span:first-child {
+  transform: translateX(-101%);
+}
+
+.loader__btn:hover span:last-child {
+  transform: translateX(101%);
+}
+
+.loader__wrap {
+  perspective: 32rem;
+  position: absolute;
+  top: -9rem;
+  z-index: -1;
+}
+
+.loader__box {
+  height: 8rem;
+  margin: 0 auto 1rem;
+  pointer-events: none;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 8rem;
+}
+
+.loader__box,
+.loader__box div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.loader__box div {
+  background: #212121;
+  font-size: 4rem;
+  height: 100%;
+  padding: 5rem;
+  position: absolute;
+  width: 100%;
+}
+
+.loader__box div:first-child {
+  transform: rotateY(0deg) translateZ(4rem);
+}
+
+.loader__box div:nth-child(2) {
+  transform: rotateY(-90deg) translateZ(4rem);
+}
+
+.loader__box div:nth-child(3) {
+  transform: rotateX(-90deg) rotate(-90deg) translateZ(4rem);
+}
+
+.loader__box div:nth-child(4) {
+  transform: rotateX(180deg) rotate(-90deg) translateZ(4rem);
+}
+
+.loader__box div:nth-child(5) {
+  transform: rotateX(90deg) translateZ(4rem);
+}
+
+.loader__box div:nth-child(6) {
+  transform: rotateY(90deg) rotate(90deg) translateZ(4rem);
+}
+
+.loader__box--pink div {
+  background: #efded9;
+}
+
+.loader--animate .loader__box {
+  animation: loader 4s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotateY(0) rotateX(0);
+  }
+  16.6% {
+    transform: rotateY(90deg) rotateX(0);
+  }
+  33.3% {
+    transform: rotateY(90deg) rotateX(0) rotate(90deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(0) rotate(90deg);
+  }
+  66.6% {
+    transform: rotateY(180deg) rotateX(-90deg) rotate(90deg);
+  }
+  83.3% {
+    transform: rotateY(270deg) rotateX(-90deg) rotate(90deg);
+  }
+  to {
+    transform: rotateY(270deg) rotateX(-90deg) rotate(90deg) rotateX(90deg);
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.modal-images img {
+  width: 100%;
+  height: auto;
+}
