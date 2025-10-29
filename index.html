@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-    <title>Unseen Studio® – Projects</title>
+    <title>Nguyễn Lan Chi</title>
     <link rel="preload" as="font" crossorigin href="wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff2">
     <link rel="preload" as="script" href="wp-content/themes/unseen/public/scripts/manifest.js?id=9660198a1386b5e4e515b7fa518fa84d">
     <link rel="preload" as="script" href="wp-content/themes/unseen/public/scripts/vendor.js?id=4d3ac43b9e360f391febd63f910ddf0c">
@@ -51,9 +51,9 @@
             "@context": "https://schema.org",
             "@graph": [{
                 "@type": "CollectionPage",
-                "@id": "../projects/",
-                "url": "../projects/",
-                "name": "Unseen Studio® – Projects",
+                "@id": "/",
+                "url": "/",
+                "name": "Nguyễn Lan Chi",
                 "isPartOf": {
                     "@id": "../#website"
                 },
@@ -110,15 +110,15 @@
         </div>
         <!-- Kết thúc lớp nền -->
 
-        <div class="loader-header">
+        <div class="loader-header" id="loader-header">
             Lan Chi
         </div>
         <!-- Menu ở góc trên bên phải -->
         <nav class="loader-menu">
             <ul>
-            <li><a href="#">EXTRACURRICULAR ACTIVITIES</a></li>
-            <li><a href="#">STUDIO ARTS</a></li>
-            <li><a href="#">SCULPTURE</a></li>
+                <li><a href="#" class="js-enter-nav1">EXTRACURRICULAR ACTIVITIES</a></li>
+                <li><a href="#" class="js-enter-nav2">STUDIO ARTS</a></li>
+                <li><a href="#" class="js-enter-nav3">WORK EXPERIENCE</a></li>
             </ul>
         </nav>
         <div class="loader__inner">
@@ -132,9 +132,9 @@
                     <div>E</div>
                 </div>
             </div>
-            <span class="loader__title" style="color: white; text-shadow: 2px 2px 4px #000000;">ABOUT ME</span>
+            <span class="loader__title" style="color: white; text-shadow: 2px 2px 4px #000000; font-size: 2.5rem;">ABOUT ME</span>
             <p class="loader__tagline" style="color: white; text-shadow: 1px 1px 2px #000000;">Art is the language I breathe in. I create to decipher the pulse of human emotions and the way individuality bends or endures under pressure.<br> I am endlessly curious about the stories stitched into history and culture, tracing the causes behind why we become and why we feel.<br> Between past and present, heart and mind, I make art to understand, and to celebrate the shapes of being human</p>
-            <button class="loader__btn js-enter-no-audio-btn" style="background-color: #4a90e2; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">View our work</button>
+            <button class="loader__btn js-enter-no-audio-btn">View our work</button>
             </div>
         <div class="loader__progress js-loader-progress">
             <div class="js-loader-progress-inner">
@@ -226,7 +226,6 @@ c-1.5,4.8-3.8-0.8-5.1-2.8c-1.7-2.6-4-4.7-6.3-6.7c-4.7-4.3-10-8.5-12.9-14.3C160,1
                          View our works
                         </span>
                         <svg class="btn__icon d-inline-block js-btn-icon">
-                        <use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#arrow"></use>
                         </svg>
                         </span>
                         </span>
@@ -335,7 +334,6 @@ c2.3,31.7,21.3,49.5,41.4,49.5C1205.5,155.4,1219.8,139.7,1219.6,106z"/>
 <div class="btn__inner menu-btn__inner absolute">
 <span class="btn__inner-bg menu-btn__inner-bg js-menu-toggle-inner-bg"></span>
 <svg class="btn__inner-icon menu-btn__inner-icon js-menu-toggle-inner-icon">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#close"></use>
 </svg>
 </div>
 </button>
@@ -377,7 +375,6 @@ World
 <span class="t-italic t-ls-tighter menu__hover-text js-menu-hover-text">World</span>
 <span class="menu__world js-menu-world-icon">
 <svg>
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#globe"></use>
 </svg>
 </span>
 </a>
@@ -480,12 +477,10 @@ Read about our rebrand
         <a href="../world/" class="btn btn--circle world-btn d-none d-flex@md z-50 js-world-btn" data-cursor="hide" data-audio-enter="audio.hover">
             <div class="btn__bg world-btn__bg absolute js-world-inner-bg"></div>
             <svg class="btn__icon world-btn__icon absolute js-world-icon">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#globe"></use>
 </svg>
             <div class="btn__inner world-btn__inner absolute z-40">
                 <span class="btn__inner-bg world-btn__bg absolute js-world-btn-hover"></span>
                 <svg class="btn__inner-icon world-btn__inner-icon absolute fill js-world-hover-icon">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#globe"></use>
 </svg>
                 <div class="world-btn__text absolute fill z-40">
                     <div class="world-btn__text-left">
@@ -512,7 +507,6 @@ Read about our rebrand
 projects@unseen.co
 </span>
 <svg class="btn__icon d-inline-block js-btn-icon">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#arrow"></use>
 </svg>
 </span>
 </span>
@@ -536,17 +530,17 @@ projects@unseen.co
     <div class="fixed top left w-1/1 h-1/1 d-flex items-center justify-center z-50 pointer-events-none user-select-none js-world-intro" style="visibility: hidden">
         <div class="world-intro">
             <div class="mb-1">
-                <svg><use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#drag-globe"></use></svg>
             </div>
             <div class="overflow-hidden">
                 <p class="t-white t-center mb-0">Drag to explore our world</p>
             </div>
         </div>
     </div>
+    <div class="loader-header" style="z-index: 1000;">
+        Lan Chi
+    </div>
     <div class="project-filters | js-project-filters" style="visibility: hidden; opacity: 0">
-        <div class="loader-header">
-            Lan Chi
-        </div>
+        
         <!-- Menu ở góc trên bên phải -->
         <div class="project-filters__overlay js-project-filters:overlay"></div>
         <div class="project-filters__inner | js-project-filters-inner">
@@ -556,7 +550,6 @@ projects@unseen.co
                 <button class="project-filters__filter__toggle d-none@md | js-project-filters:toggle">
 Filter
 <svg class="project-filters__filter__chevron js-project-filters:chevron">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#chevron-down"></use>
 </svg>
 </button>
                 <div class="project-filters__filter__list | js-project-filters:filterList">
@@ -566,7 +559,7 @@ Filter
                     <button data-filter="branding" class="project-filters__filter__button | js-project-filters:filterBtn">EXTRACURRICULAR ACTIVITIES
 <div class="js-project-filters:filter:number"></div>
 </button>
-                    <button data-filter="digital" class="project-filters__filter__button | js-project-filters:filterBtn">STDUIO ARTS
+                    <button data-filter="digital" class="project-filters__filter__button | js-project-filters:filterBtn">STUDIO ARTS
 <div class="js-project-filters:filter:number"></div>
 </button>
                     <button data-filter="motion" class="project-filters__filter__button | js-project-filters:filterBtn">WORK EXPERIENCE
@@ -588,7 +581,6 @@ Filter
 View our work
 </span>
 <svg class="btn__icon d-inline-block js-btn-icon">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#arrow"></use>
 </svg>
 </span>
 </span>
@@ -619,7 +611,6 @@ View our work
 New Business
 </span>
 <svg class="btn__icon d-inline-block js-btn-icon">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#arrow"></use>
 </svg>
 </span>
 </span>
@@ -635,7 +626,6 @@ New Business
 General
 </span>
 <svg class="btn__icon d-inline-block js-btn-icon">
-<use xlink:href="wp-content/themes/unseen/public/images/svgsprite.svg#arrow"></use>
 </svg>
 </span>
 </span>

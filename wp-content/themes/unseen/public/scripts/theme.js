@@ -991,6 +991,15 @@
               heart: p('.js-eyes-heart'),
             }),
             (this.enterButton = new y(document.querySelector('.js-enter-btn'))),
+            (this.enterNav1 = document.querySelector(
+              '.js-enter-nav1'
+            )),
+            (this.enterNav2 = document.querySelector(
+              '.js-enter-nav2'
+            )),
+            (this.enterNav3 = document.querySelector(
+              '.js-enter-nav3'
+            )),
             (this.enterNoAudioButton = document.querySelector(
               '.js-enter-no-audio-btn'
             )),
@@ -1003,6 +1012,21 @@
             n.on('AssetsProgress', this.throttledProgressFunc),
             n.on('AssetLoader:afterResolve', this.onAssetsLoaded),
             n.on('click', this.enterButton.dom.el, this.onEnterButtonClick),
+            n.on(
+              'click',
+              this.enterNav1,
+              this.onEnterNoAudioButtonClick
+            ),
+            n.on(
+              'click',
+              this.enterNav2,
+              this.onEnterNoAudioButtonClick
+            ),
+            n.on(
+              'click',
+              this.enterNav3,
+              this.onEnterNoAudioButtonClick
+            ),
             n.on(
               'click',
               this.enterNoAudioButton,
