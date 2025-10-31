@@ -14458,6 +14458,7 @@
                   p => p.project.title === this.hoveredItem.name
                 )
 
+                  console.log("project data",projectData);
                 if (projectData) {
                   // Gọi hàm mở modal (bạn đã viết sẵn)
                   this.initModal(projectData)
@@ -14473,6 +14474,8 @@
               }
             }),
             Rs(this, 'initModal', project => {
+
+                  console.log("init modal",project);
               const modal = document.getElementById('image-modal')
               if (!modal) {
                 console.error('Modal element #image-modal not found!')
@@ -14501,6 +14504,7 @@
                 modalImages.appendChild(img)
               })
 
+              console.log("project data",project);
               // Cập nhật tiêu đề và mô tả
               if (modalTitle) {
                 modalTitle.textContent = project.project.title
