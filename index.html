@@ -103,14 +103,13 @@
     <div class="loader loader--animate js-loader">
         <!-- LỚP NỀN MỚI CHỨA 3 ẢNH -->
         <div class="background-container">
-            <div class="background-slice" style="background-image: url('bg1.PNG');"></div>
-            <div class="background-slice" style="background-image: url('bg3.PNG');"></div>
-            <div class="background-slice" style="background-image: url('bg2.PNG');"></div>
+            <div class="background-slice" style="background-image: url('bg1-min.jpg');"></div>
+            <div class="background-slice" style="background-image: url('bg2-min.jpg');"></div>
+            <div class="background-slice" style="background-image: url('bg3-min.jpg');"></div>
         </div>
         <!-- Kết thúc lớp nền -->
 
         <!-- <div class="background-slice" style="background-image: url('bg4.jpg');"></div> -->
-
         <div class="loader-header" id="loader-header">
             Lan Chi
         </div>
@@ -522,7 +521,7 @@ projects@unseen.co
                     "assetsUrl": "wp-content\/themes\/unseen\/resources\/assets\/"
                 };
             </script>
-            <script defer="defer" src='wp-content/themes/unseen/public/scripts/theme.min.js?id=ddeecb32509137704fa301e3ef34c990' id='theme-js'></script>
+            <script defer="defer" src='wp-content/themes/unseen/public/scripts/theme.js?id=ddeecb32509137704fa301e3ef34c990' id='theme-js'></script>
         </main>
     </div>
     <div class="fixed fill w-1/1 h-1/1 z-40 user-select-none pointer-events-none">
@@ -571,7 +570,7 @@ Filter
             </div>
         </div>
     </div>
-    <div class="d-none">
+    <div class="d-none">    
         <!-- Home Content -->
         <div class="js-view-projects-btn" style="visibility: hidden">
             <a href="../projects/" title="View our work" class="btn btn--regular btn--fill btn--light js-manager-ignore js-btn" data-btn="fill" data-cursor="hide">
@@ -2715,6 +2714,10 @@ General
         }
     ]
     </script>
+    <div id="fullscreen-overlay">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreen-image">
+    </div>
 </body>
 
 </html>

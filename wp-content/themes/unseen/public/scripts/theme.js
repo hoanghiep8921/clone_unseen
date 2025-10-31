@@ -14502,15 +14502,22 @@
                 img.alt = project.project.title
                 img.loading = 'lazy'
                 modalImages.appendChild(img)
+
+                img.onclick = () => {
+                  const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+                  const fullscreenImage = document.getElementById('fullscreen-image');
+                  fullscreenImage.src = img.src;
+                  fullscreenOverlay.style.display = 'flex';
+                };
               })
 
               console.log("project data",project);
               // Cập nhật tiêu đề và mô tả
               if (modalTitle) {
-                modalTitle.textContent = project.project.title
+                modalTitle.textContent = project.project.description
               }
               if (modalDescription) {
-                modalDescription.textContent = project.project.description
+                modalDescription.textContent = project.project.detail
               }
 
               // Hiện modal
@@ -14529,6 +14536,16 @@
               modal.onclick = event => {
                 if (event.target === modal) close()
               }
+
+              const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+              const closeFullscreen = document.querySelector('.close-fullscreen');
+
+              const closeFullscreenHandler = () => {
+                fullscreenOverlay.style.display = 'none';
+              };
+
+              fullscreenOverlay.onclick = closeFullscreenHandler;
+              closeFullscreen.onclick = closeFullscreenHandler;
             })
           Rs(this, 'onPreSceneRaf', () => {
             this.smoothMouse.lerp(o.mouse.glNormalized, 0.075),
