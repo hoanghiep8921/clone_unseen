@@ -158,7 +158,6 @@
 #loader-header {
     color: white !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
     padding: 10px !important;
     border-radius: 5px !important;
 }
@@ -166,7 +165,6 @@
 .loader-menu a {
     color: white !important;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
-    background-color: rgba(0, 0, 0, 0.5) !important;
     padding: 5px 10px !important;
     border-radius: 5px !important;
     display: inline-block; /* To make padding and background visible */
