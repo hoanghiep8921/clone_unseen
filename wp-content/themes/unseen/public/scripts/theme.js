@@ -19796,22 +19796,22 @@
           super({
             renderers: {
               default: wo,
-              homeContact: Eo,
+              // homeContact: Eo,
               projects: Po,
               project: Mo,
-              world: Co,
-              notFound: jo,
-              ktxPreview: Go,
+              // world: Co,
+              // notFound: jo,
+              // ktxPreview: Go,
             },
             transitions: {
               default: Ao,
               contextual: {
                 default: Ao,
                 homeToProject: zo,
-                toWorld: Lo,
-                toHome: Oo,
-                toContact: Ro,
-                toProjectMenu: ko,
+                // toWorld: Lo,
+                // toHome: Oo,
+                // toContact: Ro,
+                // toProjectMenu: ko,
                 toProject: Io,
                 projectToProject: Do,
               },
@@ -19952,26 +19952,26 @@
             e.addEventListener('click', this._navigate)
         }
       }
-      class Ho {
-        static toEyes() {
-          p("link[rel*='icon']").forEach(e => {
-            e.href =
-              '/wp-content/themes/unseen/resources/assets/images/eyes-' +
-              e.sizes +
-              '.png?=' +
-              Math.random()
-          })
-        }
-        static toDefault() {
-          p("link[rel*='icon']").forEach(e => {
-            e.href =
-              '/wp-content/themes/unseen/public/favicon/favicon-' +
-              e.sizes +
-              '.png?=' +
-              Math.random()
-          })
-        }
-      }
+      // class Ho {
+      //   static toEyes() {
+      //     p("link[rel*='icon']").forEach(e => {
+      //       e.href =
+      //         '/wp-content/themes/unseen/resources/assets/images/eyes-' +
+      //         e.sizes +
+      //         '.png?=' +
+      //         Math.random()
+      //     })
+      //   }
+      //   static toDefault() {
+      //     p("link[rel*='icon']").forEach(e => {
+      //       e.href =
+      //         '/wp-content/themes/unseen/public/favicon/favicon-' +
+      //         e.sizes +
+      //         '.png?=' +
+      //         Math.random()
+      //     })
+      //   }
+      // }
 
       function No(e, t) {
         var i = Object.keys(e)
@@ -20037,9 +20037,9 @@
             (window.store = o)
         }
         static handleFavicon() {
-          document.addEventListener('visibilitychange', () => {
-            document.hidden ? Ho.toEyes() : Ho.toDefault()
-          })
+          // document.addEventListener('visibilitychange', () => {
+          //   document.hidden ? Ho.toEyes() : Ho.toDefault()
+          // })
         }
       }
       Wo.init()
