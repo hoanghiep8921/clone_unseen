@@ -19760,76 +19760,76 @@
                                 }, e.GPOS = {}, e.GPOS.parse = function(t, n, r, i) {
                                     return e._lctf.parse(t, n, r, i, e.GPOS.subt)
                                 }, e.GPOS.subt = function(t, n, r, i) {
-                                    var o = e._bin,
-                                        s = r,
-                                        a = {};
-                                    if (a.fmt = o.readUshort(t, r), r += 2, 1 == n || 2 == n || 3 == n || 7 == n || 8 == n && a.fmt <= 2) {
-                                        var l = o.readUshort(t, r);
-                                        r += 2, a.coverage = e._lctf.readCoverage(t, l + s)
-                                    }
-                                    if (1 == n && 1 == a.fmt) {
-                                        var u = o.readUshort(t, r);
-                                        r += 2;
-                                        var c = e._lctf.numOfOnes(u);
-                                        0 != u && (a.pos = e.GPOS.readValueRecord(t, r, u))
-                                    } else if (2 == n && a.fmt >= 1 && a.fmt <= 2) {
-                                        u = o.readUshort(t, r), r += 2;
-                                        var h = o.readUshort(t, r);
-                                        r += 2, c = e._lctf.numOfOnes(u);
-                                        var d = e._lctf.numOfOnes(h);
-                                        if (1 == a.fmt) {
-                                            a.pairsets = [];
-                                            var p = o.readUshort(t, r);
-                                            r += 2;
-                                            for (var f = 0; f < p; f++) {
-                                                var m = s + o.readUshort(t, r);
-                                                r += 2;
-                                                var v = o.readUshort(t, m);
-                                                m += 2;
-                                                for (var g = [], _ = 0; _ < v; _++) {
-                                                    var b = o.readUshort(t, m);
-                                                    m += 2, 0 != u && (T = e.GPOS.readValueRecord(t, m, u), m += 2 * c), 0 != h && (E = e.GPOS.readValueRecord(t, m, h), m += 2 * d), g.push({
-                                                        gid2: b,
-                                                        val1: T,
-                                                        val2: E
-                                                    })
-                                                }
-                                                a.pairsets.push(g)
-                                            }
-                                        }
-                                        if (2 == a.fmt) {
-                                            var y = o.readUshort(t, r);
-                                            r += 2;
-                                            var x = o.readUshort(t, r);
-                                            r += 2;
-                                            var w = o.readUshort(t, r);
-                                            r += 2;
-                                            var S = o.readUshort(t, r);
-                                            for (r += 2, a.classDef1 = e._lctf.readClassDef(t, s + y), a.classDef2 = e._lctf.readClassDef(t, s + x), a.matrix = [], f = 0; f < w; f++) {
-                                                var M = [];
-                                                for (_ = 0; _ < S; _++) {
-                                                    var T = null,
-                                                        E = null;
-                                                    0 != u && (T = e.GPOS.readValueRecord(t, r, u), r += 2 * c), 0 != h && (E = e.GPOS.readValueRecord(t, r, h), r += 2 * d), M.push({
-                                                        val1: T,
-                                                        val2: E
-                                                    })
-                                                }
-                                                a.matrix.push(M)
-                                            }
-                                        }
-                                    } else {
-                                        if (9 == n && 1 == a.fmt) {
-                                            var A = o.readUshort(t, r);
-                                            r += 2;
-                                            var C = o.readUint(t, r);
-                                            if (r += 4, 9 == i.ltype) i.ltype = A;
-                                            else if (i.ltype != A) throw "invalid extension substitution";
-                                            return e.GPOS.subt(t, i.ltype, s + C)
-                                        }
-                                        console.debug("unsupported GPOS table LookupType", n, "format", a.fmt)
-                                    }
-                                    return a
+                                    // var o = e._bin,
+                                    //     s = r,
+                                    //     a = {};
+                                    // if (a.fmt = o.readUshort(t, r), r += 2, 1 == n || 2 == n || 3 == n || 7 == n || 8 == n && a.fmt <= 2) {
+                                    //     var l = o.readUshort(t, r);
+                                    //     r += 2, a.coverage = e._lctf.readCoverage(t, l + s)
+                                    // }
+                                    // if (1 == n && 1 == a.fmt) {
+                                    //     var u = o.readUshort(t, r);
+                                    //     r += 2;
+                                    //     var c = e._lctf.numOfOnes(u);
+                                    //     0 != u && (a.pos = e.GPOS.readValueRecord(t, r, u))
+                                    // } else if (2 == n && a.fmt >= 1 && a.fmt <= 2) {
+                                    //     u = o.readUshort(t, r), r += 2;
+                                    //     var h = o.readUshort(t, r);
+                                    //     r += 2, c = e._lctf.numOfOnes(u);
+                                    //     var d = e._lctf.numOfOnes(h);
+                                    //     if (1 == a.fmt) {
+                                    //         a.pairsets = [];
+                                    //         var p = o.readUshort(t, r);
+                                    //         r += 2;
+                                    //         for (var f = 0; f < p; f++) {
+                                    //             var m = s + o.readUshort(t, r);
+                                    //             r += 2;
+                                    //             var v = o.readUshort(t, m);
+                                    //             m += 2;
+                                    //             for (var g = [], _ = 0; _ < v; _++) {
+                                    //                 var b = o.readUshort(t, m);
+                                    //                 m += 2, 0 != u && (T = e.GPOS.readValueRecord(t, m, u), m += 2 * c), 0 != h && (E = e.GPOS.readValueRecord(t, m, h), m += 2 * d), g.push({
+                                    //                     gid2: b,
+                                    //                     val1: T,
+                                    //                     val2: E
+                                    //                 })
+                                    //             }
+                                    //             a.pairsets.push(g)
+                                    //         }
+                                    //     }
+                                    //     if (2 == a.fmt) {
+                                    //         var y = o.readUshort(t, r);
+                                    //         r += 2;
+                                    //         var x = o.readUshort(t, r);
+                                    //         r += 2;
+                                    //         var w = o.readUshort(t, r);
+                                    //         r += 2;
+                                    //         var S = o.readUshort(t, r);
+                                    //         for (r += 2, a.classDef1 = e._lctf.readClassDef(t, s + y), a.classDef2 = e._lctf.readClassDef(t, s + x), a.matrix = [], f = 0; f < w; f++) {
+                                    //             var M = [];
+                                    //             for (_ = 0; _ < S; _++) {
+                                    //                 var T = null,
+                                    //                     E = null;
+                                    //                 0 != u && (T = e.GPOS.readValueRecord(t, r, u), r += 2 * c), 0 != h && (E = e.GPOS.readValueRecord(t, r, h), r += 2 * d), M.push({
+                                    //                     val1: T,
+                                    //                     val2: E
+                                    //                 })
+                                    //             }
+                                    //             a.matrix.push(M)
+                                    //         }
+                                    //     }
+                                    // } else {
+                                    //     if (9 == n && 1 == a.fmt) {
+                                    //         var A = o.readUshort(t, r);
+                                    //         r += 2;
+                                    //         var C = o.readUint(t, r);
+                                    //         if (r += 4, 9 == i.ltype) i.ltype = A;
+                                    //         else if (i.ltype != A) throw "invalid extension substitution";
+                                    //         return e.GPOS.subt(t, i.ltype, s + C)
+                                    //     }
+                                    //     console.debug("unsupported GPOS table LookupType", n, "format", a.fmt)
+                                    // }
+                                    return {}
                                 }, e.GPOS.readValueRecord = function(t, n, r) {
                                     var i = e._bin,
                                         o = [];
