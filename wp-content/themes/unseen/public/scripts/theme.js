@@ -5904,11 +5904,11 @@
         loadGlobalAssets() {
           ;(this.webglFonts = {
             'Neue Montreal': {
-              url: `${o.assetsUrl}fonts/NeueMontreal-Regular.woff`,
+              url: ``,
               sdfGlyphSize: 128,
             },
             'Saol Display': {
-              url: `${o.assetsUrl}fonts/SaolDisplay-LightItalic.woff`,
+              url: ``,
               sdfGlyphSize: 128,
             },
           }),
@@ -16708,9 +16708,9 @@
                   (e.Q.value = a.q),
                   (e.gain.value = a.gain),
                   (e.detune.value = a.detune),
-                  s._node.bufferSource.disconnect(),
+                  // s._node.bufferSource.disconnect(),
                   s.filter && s.filter.disconnect(),
-                  s._node.bufferSource.connect(e),
+                  // s._node.bufferSource.connect(e),
                   (s.filter = e),
                   e.connect(s._node),
                   e.frequency.exponentialRampToValueAtTime(

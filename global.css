@@ -2,10 +2,6 @@
   font-family: Neue Montreal;
   font-style: normal;
   font-weight: 400;
-  src: url(/wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff2)
-      format('woff2'),
-    url(/wp-content/themes/unseen/resources/assets/fonts/NeueMontreal-Regular.woff)
-      format('woff');
 }
 
 @font-face {
