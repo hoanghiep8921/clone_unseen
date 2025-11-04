@@ -16560,12 +16560,12 @@
                                             var a = t._howls[i]._soundById(o[s]);
                                             a && a._node && !a._node._unlocked && (a._node._unlocked = !0, a._node.load())
                                         }
-                                t._autoResume();
-                                var l = t.ctx.createBufferSource();
-                                l.buffer = t._scratchBuffer, l.connect(t.ctx.destination), void 0 === l.start ? l.noteOn(0) : l.start(0), "function" == typeof t.ctx.resume && t.ctx.resume(), l.onended = function() {
-                                    l.disconnect(0), t._audioUnlocked = !0, document.removeEventListener("touchstart", e, !0), document.removeEventListener("touchend", e, !0), document.removeEventListener("click", e, !0), document.removeEventListener("keydown", e, !0);
-                                    for (var n = 0; n < t._howls.length; n++) t._howls[n]._emit("unlock")
-                                }
+                                // t._autoResume();
+                                // var l = t.ctx.createBufferSource();
+                                // l.buffer = t._scratchBuffer, l.connect(t.ctx.destination), void 0 === l.start ? l.noteOn(0) : l.start(0), "function" == typeof t.ctx.resume && t.ctx.resume(), l.onended = function() {
+                                //     l.disconnect(0), t._audioUnlocked = !0, document.removeEventListener("touchstart", e, !0), document.removeEventListener("touchend", e, !0), document.removeEventListener("click", e, !0), document.removeEventListener("keydown", e, !0);
+                                //     for (var n = 0; n < t._howls.length; n++) t._howls[n]._emit("unlock")
+                                // }
                             };
                             return document.addEventListener("touchstart", e, !0), document.addEventListener("touchend", e, !0), document.addEventListener("click", e, !0), document.addEventListener("keydown", e, !0), t
                         }
@@ -16601,11 +16601,11 @@
                         }
                     },
                     _autoResume: function() {
-                        var t = this;
-                        if (t.ctx && void 0 !== t.ctx.resume && o.usingWebAudio) return "running" === t.state && "interrupted" !== t.ctx.state && t._suspendTimer ? (clearTimeout(t._suspendTimer), t._suspendTimer = null) : "suspended" === t.state || "running" === t.state && "interrupted" === t.ctx.state ? (t.ctx.resume().then((function() {
-                            t.state = "running";
-                            for (var e = 0; e < t._howls.length; e++) t._howls[e]._emit("resume")
-                        })), t._suspendTimer && (clearTimeout(t._suspendTimer), t._suspendTimer = null)) : "suspending" === t.state && (t._resumeAfterSuspend = !0), t
+                        // var t = this;
+                        // if (t.ctx && void 0 !== t.ctx.resume && o.usingWebAudio) return "running" === t.state && "interrupted" !== t.ctx.state && t._suspendTimer ? (clearTimeout(t._suspendTimer), t._suspendTimer = null) : "suspended" === t.state || "running" === t.state && "interrupted" === t.ctx.state ? (t.ctx.resume().then((function() {
+                        //     t.state = "running";
+                        //     for (var e = 0; e < t._howls.length; e++) t._howls[e]._emit("resume")
+                        // })), t._suspendTimer && (clearTimeout(t._suspendTimer), t._suspendTimer = null)) : "suspending" === t.state && (t._resumeAfterSuspend = !0), t
                     }
                 };
                 var o = new i,
