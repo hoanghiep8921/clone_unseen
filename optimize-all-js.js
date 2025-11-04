@@ -1,185 +1,601 @@
-#!/usr/bin/env node
-
-/**
- * Script tối ưu tất cả JS files
- * Xử lý theme.js và manifest.js
- */
-
-const fs = require('fs');
-const path = require('path');
-
-const scriptsDir = './wp-content/themes/unseen/public/scripts';
-
-const files = [
-  {
-    name: 'theme.js',
-    path: `${scriptsDir}/theme.js`,
-  },
-  {
-    name: 'manifest.js', 
-    path: `${scriptsDir}/manifest.js`,
-  }
-];
-
-console.log('🚀 TỐI ƯU TOÀN BỘ JS FILES');
-console.log('=' .repeat(50));
-console.log('');
-
-const results = [];
-
-files.forEach(file => {
-  if (!fs.existsSync(file.path)) {
-    console.log(`⚠️  ${file.name} không tồn tại, bỏ qua...`);
-    return;
-  }
-
-  console.log(`\n📦 Đang xử lý ${file.name}...`);
-  
-  // Đọc file
-  const content = fs.readFileSync(file.path, 'utf8');
-  const originalSize = fs.statSync(file.path).size;
-  const lines = content.split('\n').length;
-  
-  console.log(`   📏 Số dòng: ${lines.toLocaleString()}`);
-  console.log(`   📊 Kích thước: ${(originalSize / 1024).toFixed(2)} KB`);
-  
-  // Tối ưu cơ bản - chỉ loại bỏ license comments và whitespace
-  let optimized = content
-    .replace(/\/\*!.*?For license information.*?\*\//gs, '')  // License header only
-    .replace(/\n\s*\n\s*\n/g, '\n\n')     // Multiple empty lines
-    .replace(/^\s+$/gm, '')               // Empty lines with spaces
-    .trim();
-  
-  // Backup
-  const backupPath = file.path.replace('.js', '.backup.js');
-  const optimizedPath = file.path.replace('.js', '.optimized.js');
-  
-  if (!fs.existsSync(backupPath)) {
-    fs.copyFileSync(file.path, backupPath);
-    console.log(`   💾 Backup: ${path.basename(backupPath)}`);
-  } else {
-    console.log(`   ℹ️  Backup đã tồn tại, bỏ qua...`);
-  }
-  
-  // Save optimized version
-  fs.writeFileSync(optimizedPath, optimized);
-  const optimizedSize = fs.statSync(optimizedPath).size;
-  const saved = originalSize - optimizedSize;
-  const percent = ((saved / originalSize) * 100).toFixed(1);
-  
-  console.log(`   ✅ Tối ưu: ${(optimizedSize / 1024).toFixed(2)} KB`);
-  console.log(`   📉 Tiết kiệm: ${(saved / 1024).toFixed(2)} KB (${percent}%)`);
-  
-  results.push({
-    name: file.name,
-    originalSize,
-    optimizedSize,
-    saved,
-    percent,
-    backupPath,
-    optimizedPath
-  });
-});
-
-// Minify với terser
-console.log('\n\n🔧 MINIFYING VỚI TERSER...');
-console.log('=' .repeat(50));
-
-results.forEach(result => {
-  const minPath = result.optimizedPath.replace('.optimized.js', '.min.js');
-  
-  console.log(`\n⚙️  Minify ${result.name}...`);
-  
-  try {
-    const { execSync } = require('child_process');
-    execSync(`npx -y terser ${result.optimizedPath} -o ${minPath} -c -m`, {
-      stdio: 'pipe'
-    });
-    
-    const minSize = fs.statSync(minPath).size;
-    const totalSaved = result.originalSize - minSize;
-    const totalPercent = ((totalSaved / result.originalSize) * 100).toFixed(1);
-    
-    result.minSize = minSize;
-    result.totalSaved = totalSaved;
-    result.totalPercent = totalPercent;
-    result.minPath = minPath;
-    
-    console.log(`   ✅ Hoàn thành: ${(minSize / 1024).toFixed(2)} KB`);
-    console.log(`   📉 Tổng tiết kiệm: ${(totalSaved / 1024).toFixed(2)} KB (${totalPercent}%)`);
-  } catch (error) {
-    console.log(`   ❌ Lỗi: ${error.message}`);
-  }
-});
-
-// Summary
-console.log('\n\n📊 TỔNG KẾT');
-console.log('=' .repeat(50));
-console.log('');
-
-let totalOriginal = 0;
-let totalMinified = 0;
-
-results.forEach(result => {
-  totalOriginal += result.originalSize;
-  if (result.minSize) {
-    totalMinified += result.minSize;
-  }
-});
-
-console.log('┌─────────────────┬──────────┬──────────┬──────────┬─────────┐');
-console.log('│ File            │ Gốc      │ Tối ưu   │ Minified │ Giảm    │');
-console.log('├─────────────────┼──────────┼──────────┼──────────┼─────────┤');
-
-results.forEach(result => {
-  const name = result.name.padEnd(15);
-  const orig = `${(result.originalSize / 1024).toFixed(0)}K`.padStart(8);
-  const opt = `${(result.optimizedSize / 1024).toFixed(0)}K`.padStart(8);
-  const min = result.minSize ? `${(result.minSize / 1024).toFixed(0)}K`.padStart(8) : '   -    ';
-  const saved = result.totalPercent ? `${result.totalPercent}%`.padStart(7) : '   -   ';
-  
-  console.log(`│ ${name} │ ${orig} │ ${opt} │ ${min} │ ${saved} │`);
-});
-
-console.log('└─────────────────┴──────────┴──────────┴──────────┴─────────┘');
-
-const totalSaved = totalOriginal - totalMinified;
-const totalPercent = ((totalSaved / totalOriginal) * 100).toFixed(1);
-
-console.log('');
-console.log(`📦 Tổng kích thước gốc:     ${(totalOriginal / 1024).toFixed(2)} KB`);
-console.log(`📦 Tổng kích thước minified: ${(totalMinified / 1024).toFixed(2)} KB`);
-console.log(`✅ Tổng tiết kiệm:          ${(totalSaved / 1024).toFixed(2)} KB (${totalPercent}%)`);
-
-console.log('\n\n📁 FILES ĐÃ TẠO');
-console.log('=' .repeat(50));
-results.forEach(result => {
-  console.log(`\n${result.name}:`);
-  console.log(`   📄 Backup:    ${path.basename(result.backupPath)}`);
-  console.log(`   📄 Optimized: ${path.basename(result.optimizedPath)}`);
-  if (result.minPath) {
-    console.log(`   ⭐ Minified:  ${path.basename(result.minPath)}`);
-  }
-});
-
-console.log('\n\n🎯 TIẾP THEO');
-console.log('=' .repeat(50));
-console.log('');
-console.log('1. Test website với các file minified');
-console.log('2. Nếu OK, chạy script apply:');
-console.log('   $ ./apply-all-optimizations.sh');
-console.log('');
-console.log('3. Hoặc apply thủ công:');
-results.forEach(result => {
-  if (result.minPath) {
-    const original = result.minPath.replace('.min.js', '.js');
-    console.log(`   $ cp ${result.minPath} ${original}`);
-  }
-});
-console.log('');
-console.log('4. Nếu có lỗi, restore từ backup:');
-results.forEach(result => {
-  const original = result.backupPath.replace('.backup.js', '.js');
-  console.log(`   $ cp ${result.backupPath} ${original}`);
-});
-console.log('');
+projects = [{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Mixed media sculpture",
+                "detail":"I use the remnants of failed artistic pursuits and the colorful, forgotten objects my family hoards in my sculptures - turning accumulation into appreciation, and a tangible chronicle of my commitment to art.",
+                "title": "SCULPTURE",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Mixed media sculpture",
+                    "name": "SCULPTURE",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/sculpture\/5.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },
+        {
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Expressionist painting",
+                "detail":"I draw myself. Each painting - a light illuminating the suppressed corner of my soul. Each brush - my emotional turbulence and insecurities, a reflection of how feelings shape my sense of self. Through my expressionist works, I trace the roots of these emotions, both personal and societal - turning inner chaos into deeper philosophical questions.",
+                "title": "EXPRESSIONIST PAINTINGS",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Portfolio Website",
+                    "name": "25 Residences",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/paint\/1.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Conceptual painting",
+                "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+                "title": "Traditional Instruments Artworks",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Conceptual painting",
+                    "name": "Traditional Instruments Artworks",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/1.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Conceptual painting",
+                "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+                "title": "Observational",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Conceptual painting",
+                    "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+                    "name": "Observational",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "2",
+                "image": "wp-content\/uploads\/art-digital\/observational\/2.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Conceptual painting",
+                "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+                "title": "GRAPHITE DRAWINGS",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Conceptual painting",
+                    "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+                    "name": "GRAPHITE DRAWINGS",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/draw\/1.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Conceptual painting",
+                "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+                "title": "DIGITAL ART",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Conceptual painting",
+                    "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+                    "name": "DIGITAL ART",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/digital\/10.png",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "Lead Digital Artist, The 1% Fund",
+                "detail":"Gom 2024: Dawn Rising is a Tet initiative to honor the quiet heartbeat of Hanoi, the community service workers who labor while the city celebrates. Students bring homemade chung cakes to these unseen hands, offering warmth and gratitude. To capture this essence, I envisioned the artwork in traditional Vietnamese embroidery, a familiar presence in many homes, reflecting the steady, unassuming beauty of those who sustain our streets. I wove  Art Nouveau’s vibrant lines and colors into the PR campaign, giving their subtle, enduring contributions a modern, luminous voice.",
+                "title": "1% Fund",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "Lead Digital Artist, The 1% Fund",
+                    "detail":"Gom 2024: Dawn Rising is a Tet initiative to honor the quiet heartbeat of Hanoi, the community service workers who labor while the city celebrates. Students bring homemade chung cakes to these unseen hands, offering warmth and gratitude. To capture this essence, I envisioned the artwork in traditional Vietnamese embroidery, a familiar presence in many homes, reflecting the steady, unassuming beauty of those who sustain our streets. I wove  Art Nouveau’s vibrant lines and colors into the PR campaign, giving their subtle, enduring contributions a modern, luminous voice.",
+                    "name": "1% Fund",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/extra-branding\/1fund\/2.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },
+        {
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "Founder/Editorial Artist, Thành Vinh Hoa (Heroines Reimagines)",
+                "detail":"Flipping through History textbooks on the past millennium, praises of generals and emperors echoed, none of which were for women. When shut out by  Confucian patriarchy, women wove their resistance into art and medicine. Their intelligence could never be erased, just shifted. In Hanoi, I traced the names carved into the city, yet absent from our memory. A street name. A weathered tomb. Walking those roads felt like listening to a chorus of quiet brilliance. I began telling their stories through Thanh Vinh Hoa to tourists and locals whose eyes lit with the same wonder and ache I felt. That defined the project's mission: an act of admiration and remembrance, to give voice to the women whose minds shaped Vietnam with witty flexibility.",
+                "title": "Thành Vinh Hoa",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "Founder/Editorial Artist, Thành Vinh Hoa (Heroines Reimagines)",
+                    "detail":"Gom 2024: Dawn Rising is a Tet initiative to honor the quiet heartbeat of Hanoi, the community service workers who labor while the city celebrates. Students bring homemade chung cakes to these unseen hands, offering warmth and gratitude. To capture this essence, I envisioned the artwork in traditional Vietnamese embroidery, a familiar presence in many homes, reflecting the steady, unassuming beauty of those who sustain our streets. I wove  Art Nouveau’s vibrant lines and colors into the PR campaign, giving their subtle, enduring contributions a modern, luminous voice.",
+                    "name": "Thành Vinh Hoa",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "0",
+                "image": "wp-content\/uploads\/extra-branding\/thanhvinhhoa\/10.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "President/Art Director, Ladyly",
+                "detail":"At Thien Duc Nursing Home, I felt, for the first time, the true weight of war pressing on the human spirit. In the elders’ stories war always reigned. Some could only recall mountains climbed with rice on their backs, others of guerrilla nights that would never fade. And yet, their pride glimmered when mentioning the children they raised, in the peace they nursed from rubbles. Seeing their content eyes, I understood Hegel’s words: Spirit attains self-consciousness only through struggle and overcoming opposition. From these stories bloomed Wish Lanterns: together, we painted hopes onto lanterns and let them light up the night sky, honoring lives of strength and the dreams they still carry.",
+                "title": "LADYLY",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "President/Art Director, Ladyly",
+                    "detail":"At Thien Duc Nursing Home, I felt, for the first time, the true weight of war pressing on the human spirit. In the elders’ stories war always reigned. Some could only recall mountains climbed with rice on their backs, others of guerrilla nights that would never fade. And yet, their pride glimmered when mentioning the children they raised, in the peace they nursed from rubbles. Seeing their content eyes, I understood Hegel’s words: Spirit attains self-consciousness only through struggle and overcoming opposition. From these stories bloomed Wish Lanterns: together, we painted hopes onto lanterns and let them light up the night sky, honoring lives of strength and the dreams they still carry.",
+                    "name": "LADYLY",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/extra-branding\/ladily\/1.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "Head Organizer/Lead Visual Designer, Code of Culture ",
+                "detail":"At first, I thought the Decoding Race would awaken Ngũ Xã’s legacy in nearly a hundred people - 30 players and 40 volunteers. Yet as teams rushed through Hanoi’s historic sites, I saw many only racing toward the next clue, missing the stories beneath their feet. For a moment, I wondered if the plan had failed. But in bringing together 40 peers who cared deeply about culture, we had found our people. And perhaps, some of the stories we wove into the clues will linger quietly in the minds of those who ran past them.",
+                "title": "Green Hanoi Amsterdam",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "Head Organizer/Lead Visual Designer, Code of Culture ",
+                    "detail":"At first, I thought the Decoding Race would awaken Ngũ Xã’s legacy in nearly a hundred people - 30 players and 40 volunteers. Yet as teams rushed through Hanoi’s historic sites, I saw many only racing toward the next clue, missing the stories beneath their feet. For a moment, I wondered if the plan had failed. But in bringing together 40 peers who cared deeply about culture, we had found our people. And perhaps, some of the stories we wove into the clues will linger quietly in the minds of those who ran past them.",
+                    "name": "Green Hanoi Amsterdam",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/extra-branding\/gha\/1.jpeg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "Head Organizer/Lead Visual Designer, Code of Culture ",
+                "detail":"At first, I thought the Decoding Race would awaken Ngũ Xã’s legacy in nearly a hundred people - 30 players and 40 volunteers. Yet as teams rushed through Hanoi’s historic sites, I saw many only racing toward the next clue, missing the stories beneath their feet. For a moment, I wondered if the plan had failed. But in bringing together 40 peers who cared deeply about culture, we had found our people. And perhaps, some of the stories we wove into the clues will linger quietly in the minds of those who ran past them.",
+                "title": "CODE OF CULTURE",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "Head Organizer/Lead Visual Designer, Code of Culture ",
+                    "detail":"At first, I thought the Decoding Race would awaken Ngũ Xã’s legacy in nearly a hundred people - 30 players and 40 volunteers. Yet as teams rushed through Hanoi’s historic sites, I saw many only racing toward the next clue, missing the stories beneath their feet. For a moment, I wondered if the plan had failed. But in bringing together 40 peers who cared deeply about culture, we had found our people. And perhaps, some of the stories we wove into the clues will linger quietly in the minds of those who ran past them.",
+                    "name": "CODE OF CULTURE",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/extra-branding\/codeOfCulture\/1.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "Head Organizer/Lead Visual Designer, Code of Culture ",
+                "detail":"At first, I thought the Decoding Race would awaken Ngũ Xã’s legacy in nearly a hundred people - 30 players and 40 volunteers. Yet as teams rushed through Hanoi’s historic sites, I saw many only racing toward the next clue, missing the stories beneath their feet. For a moment, I wondered if the plan had failed. But in bringing together 40 peers who cared deeply about culture, we had found our people. And perhaps, some of the stories we wove into the clues will linger quietly in the minds of those who ran past them.",
+                "title": "GHA CAMP BLAST",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "Head Organizer/Lead Visual Designer, Code of Culture ",
+                    "detail":"At first, I thought the Decoding Race would awaken Ngũ Xã’s legacy in nearly a hundred people - 30 players and 40 volunteers. Yet as teams rushed through Hanoi’s historic sites, I saw many only racing toward the next clue, missing the stories beneath their feet. For a moment, I wondered if the plan had failed. But in bringing together 40 peers who cared deeply about culture, we had found our people. And perhaps, some of the stories we wove into the clues will linger quietly in the minds of those who ran past them.",
+                    "name": "GHA CAMP BLAST",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/extra-branding\/ghaCamp\/1.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "President, Hanoi-Amsterdam Student Council",
+                "detail":"I remember Orientation Day vividly as it was the first official day of high school. It introduced me to the creative nooks and corners of Hanoi Amsterdam, revealing the vibrant artistic legacy of my seniors. Experiencing that sense of discovery inspired me to join the Student Council. I want to help create more community spaces and artistic opportunities for students, while also serving as a guide for the next generation, helping them feel welcomed and inspired from their very first day.",
+                "title": "AMSTERDAM STUDENT COUNCIL",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "President, Hanoi-Amsterdam Student Council",
+                    "detail":"I remember Orientation Day vividly as it was the first official day of high school. It introduced me to the creative nooks and corners of Hanoi Amsterdam, revealing the vibrant artistic legacy of my seniors. Experiencing that sense of discovery inspired me to join the Student Council. I want to help create more community spaces and artistic opportunities for students, while also serving as a guide for the next generation, helping them feel welcomed and inspired from their very first day.",
+                    "name": "AMSTERDAM STUDENT COUNCIL",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/extra-branding\/asm\/10.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["branding"],
+                "description": "Digital Media Leader, Ams’ Got Talent - School’s Annual Art Showcase (700+ live, 5,000+ online)",
+                "detail":"Ams’ Got Talent has long been a hallmark of Hanoi Amsterdam — a stage where artistic clubs, from martial arts to theatre, come together to celebrate their craft. I wanted to preserve that spirit of artistic expression that defines our school. With that in mind, we chose to capture the euphoria of being immersed in one’s passion: that dazzling zeal under the spotlight. In our campaign, we illustrated this feeling through the image of a lone ballerina dancing on a brightly lit stage, performing for the world she created within herself, where only her emotions and exhilaration existed. On showcase day, that vision came alive. The atmosphere was electric. Judges and parents were captivated, and students glowed with pride. They embraced their artistry, stood unapologetically in their passion, and were celebrated by the entire school.",
+                "title": "Ams’ Got Talent",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022branding\u0022;}",
+                    "description": "Digital Media Leader, Ams’ Got Talent - School’s Annual Art Showcase (700+ live, 5,000+ online)",
+                    "detail":"Ams’ Got Talent has long been a hallmark of Hanoi Amsterdam — a stage where artistic clubs, from martial arts to theatre, come together to celebrate their craft. I wanted to preserve that spirit of artistic expression that defines our school. With that in mind, we chose to capture the euphoria of being immersed in one’s passion: that dazzling zeal under the spotlight. In our campaign, we illustrated this feeling through the image of a lone ballerina dancing on a brightly lit stage, performing for the world she created within herself, where only her emotions and exhilaration existed. On showcase day, that vision came alive. The atmosphere was electric. Judges and parents were captivated, and students glowed with pride. They embraced their artistry, stood unapologetically in their passion, and were celebrated by the entire school.",
+                    "name": "Ams’ Got Talent",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/extra-branding\/agt\/agt_cover.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["motion"],
+                "description": "WORK EXPERIENCE",
+                "detail":"",
+                "title": "WORK EXPERIENCE",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022motion\u0022;}",
+                    "description": "WORK EXPERIENCE",
+                    "detail":"",
+                    "name": "WORK EXPERIENCE",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/experiment-motion\/work\/1.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            }],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        }
+    ]
