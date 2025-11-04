@@ -14453,7 +14453,6 @@
               }
 
               if (this.hoveredItem) {
-                // Lấy dữ liệu project từ window.projects
                 const projectData = window.projects.find(
                   p => p.project.title === this.hoveredItem.name
                 )
@@ -14463,14 +14462,9 @@
                   // Gọi hàm mở modal (bạn đã viết sẵn)
                   this.initModal(projectData)
                 }
-
-                // Vẫn giữ transition màu nền (nếu muốn hiệu ứng mượt)
                 this.toProjectTransitionData.bgColor = this.hoveredItem.bgColor
                 this.toProjectTransitionData.lightMode =
                   this.hoveredItem.lightMode
-
-                // Kích hoạt transition (nếu bạn vẫn muốn hiệu ứng màn hình chuyển màu)
-                // o.Highway.redirect(...) sẽ không gọi nữa
               }
             }),
             Rs(this, 'initModal', project => {
