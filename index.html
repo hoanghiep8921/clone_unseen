@@ -97,6 +97,17 @@
     <link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/unseen/public/css/style.css?id=63f2ece398b534f2523b0748e42ffee1' media='all' />
     <link rel='stylesheet' href='global.css' />
     <link rel='stylesheet' href='custom.css' />
+    <style>
+        .background-slice {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .js-view-projects-btn {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="archive post-type-archive post-type-archive-project wp-embed-responsive">
@@ -2708,6 +2719,29 @@ General
       <span class="close-fullscreen">&times;</span>
       <img id="fullscreen-image">
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slices = document.querySelectorAll(".background-slice");
+            const viewWorkButton = document.querySelector(".js-view-projects-btn");
+
+            setTimeout(() => {
+                slices[0].style.opacity = "1";
+            }, 1000);
+
+            setTimeout(() => {
+                slices[1].style.opacity = "1";
+            }, 2000);
+
+            setTimeout(() => {
+                slices[2].style.opacity = "1";
+            }, 3000);
+
+            setTimeout(() => {
+                viewWorkButton.style.visibility = "visible";
+                viewWorkButton.style.opacity = "1";
+            }, 4000);
+        });
+    </script>
 </body>
 
 </html>
