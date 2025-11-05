@@ -541,7 +541,7 @@ let projects = [{
             },
             "images": [{
                 "name": "2",
-                "image": "wp-content\/uploads\/art-digital\/observational\/2.JPG",
+                "image": "wp-content\/uploads\/art-digital\/observational\/6.jpg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -572,6 +572,46 @@ let projects = [{
             },{
                 "name": "5",
                 "image": "wp-content\/uploads\/art-digital\/observational\/5.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "6",
+                "image": "wp-content\/uploads\/art-digital\/observational\/2.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "7",
+                "image": "wp-content\/uploads\/art-digital\/observational\/7.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "8",
+                "image": "wp-content\/uploads\/art-digital\/observational\/8.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "9",
+                "image": "wp-content\/uploads\/art-digital\/observational\/9.jpg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
