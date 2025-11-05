@@ -14459,8 +14459,7 @@
 
                   console.log("project data",projectData);
                 if (projectData) {
-                  // Gọi hàm mở modal (bạn đã viết sẵn)
-                  this.initModal(projectData)
+                  window.location.href = `images.html?project=${this.hoveredItem.name}`;
                 }
                 this.toProjectTransitionData.bgColor = this.hoveredItem.bgColor
                 this.toProjectTransitionData.lightMode =
