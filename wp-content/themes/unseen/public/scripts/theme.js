@@ -14457,9 +14457,9 @@
                   p => p.project.title === this.hoveredItem.name
                 )
 
-                  console.log("project data",projectData);
+                console.log("project data",projectData);
                 if (projectData) {
-                  window.location.href = `images.html?project=${this.hoveredItem.name}`;
+                  window.open(`images.html?project=${this.hoveredItem.name}`, '_blank');
                 }
                 this.toProjectTransitionData.bgColor = this.hoveredItem.bgColor
                 this.toProjectTransitionData.lightMode =
