@@ -899,6 +899,346 @@ let projects = [{
         },{
             "project": {
                 "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Cheekbones Exibition",
+                "detail":"When my friends came to see the exhibition, they started laughing in front of the paintings. It's the kind of laughter that means they saw themselves. “This is me when I miss the bus.” “This is me when I fail math.” I couldn’t stop smiling. I’d spent so long polishing the meanings behind my works, worried that they might come off as shallow. Yet they reached people in the simplest way. It made me happy that my art connected our experiences. And it evoked something unique in them like they did in me. I realized that maybe the point of my art is not about sophisticated me. It’s about all of us. Cheekbones: Hidden Graces sprouted from my personal reflection on how our selfhood reacts under pressure. After the war, everything was focused on rebuilding the economy. Then came meritocracy - that shiny promise of rapid progress. But the longer I looked around, the more I saw that same system eating away at individuality. Everyone’s striving, but not everyone’s living. I’ve always been drawn to distortion. Perhaps it feels honest. I learned a lot from artists like Đinh Ý Nhi and Francis Bacon, whose disfigurements commanded attention. I work with gouache and oil pastels because they let me be messy and fluid. For sculptures, I use whatever carries memory: wires, clay, threads. Things people usually overlook. Repurposing them feels like a hopeful future where what’s forgotten can still be rediscovered and cherished.",
+                "title": "Cheekbones Exibition",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Cheekbones Exibition",
+                    "detail":"When my friends came to see the exhibition, they started laughing in front of the paintings. It's the kind of laughter that means they saw themselves. “This is me when I miss the bus.” “This is me when I fail math.” I couldn’t stop smiling. I’d spent so long polishing the meanings behind my works, worried that they might come off as shallow. Yet they reached people in the simplest way. It made me happy that my art connected our experiences. And it evoked something unique in them like they did in me. I realized that maybe the point of my art is not about sophisticated me. It’s about all of us. Cheekbones: Hidden Graces sprouted from my personal reflection on how our selfhood reacts under pressure. After the war, everything was focused on rebuilding the economy. Then came meritocracy - that shiny promise of rapid progress. But the longer I looked around, the more I saw that same system eating away at individuality. Everyone’s striving, but not everyone’s living. I’ve always been drawn to distortion. Perhaps it feels honest. I learned a lot from artists like Đinh Ý Nhi and Francis Bacon, whose disfigurements commanded attention. I work with gouache and oil pastels because they let me be messy and fluid. For sculptures, I use whatever carries memory: wires, clay, threads. Things people usually overlook. Repurposing them feels like a hopeful future where what’s forgotten can still be rediscovered and cherished.",
+                    "name": "Cheekbones Exibition",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/0.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/1.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/2.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/3.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/4.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/5.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/6.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/7.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/8.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/9.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/10.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/11.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/12.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/13.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/14.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/15.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/16.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/17.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/18.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/19.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/20.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/21.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/22.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/23.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/24.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/25.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/26.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/27.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/28.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/29.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/30.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },{
+            "project": {
+                "0internal_or_external": "0",
                 "project_grid_category": ["branding"],
                 "description": "Lead Digital Artist, The 1% Fund",
                 "detail":"Gom 2024: Dawn Rising is a Tet initiative to honor the quiet heartbeat of Hanoi, the community service workers who labor while the city celebrates. Students bring homemade chung cakes to these unseen hands, offering warmth and gratitude. To capture this essence, I envisioned the artwork in traditional Vietnamese embroidery, a familiar presence in many homes, reflecting the steady, unassuming beauty of those who sustain our streets. I wove  Art Nouveau’s vibrant lines and colors into the PR campaign, giving their subtle, enduring contributions a modern, luminous voice.",
