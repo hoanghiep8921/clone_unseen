@@ -1,24 +1,55 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Image List</title>
-        <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: sans-serif;
-            margin: 20px;
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            background-color: #fdfdfd;
         }
-        #project-details {
+
+        .header-container {
             text-align: center;
-            margin: 4rem auto;
-            max-width: 800px;
+            padding: 4rem 2rem;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeIn 1s ease-out forwards;
+        }
+
+        #project-title {
+            font-family: 'Berkshire Swash', cursive;
+            font-size: 6rem;
+            font-weight: normal;
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+
+        #project-details {
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        #project-description {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #333;
+            margin: 0 0 1rem 0;
+        }
+
+        #project-detail {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin: 0;
         }
 
         @keyframes fadeIn {
@@ -28,56 +59,55 @@
             }
         }
 
-        #project-description {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #333;
+        @media (max-width: 768px) {
+            #project-title {
+                font-size: 4rem;
+            }
         }
 
-        #project-detail {
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        h1#project-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-        h1 {
-            text-align: center;
-        }
         .image-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5vh;
+            gap: 10vh;
+            padding: 5vh 0;
         }
         .image-item {
-            width: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            width: 100%;
+        }
+        .image-title {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1.5rem;
         }
         .image-item img {
             width: 80vw;
             height: 80vh;
-            object-fit: cover;
+            object-fit: contain;
             box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+        .image-description {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            margin-top: 1rem;
+            max-width: 70vw;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-
-    <h1 id="project-title"></h1>
-    <div id="project-details">
-        <h2 id="project-description"></h2>
-        <p id="project-detail"></p>
+    <div class="header-container">
+        <h1 id="project-title"></h1>
+        <div id="project-details">
+            <h2 id="project-description"></h2>
+            <p id="project-detail"></p>
+        </div>
     </div>
     <div id="image-container" class="image-container"></div>
 
@@ -94,7 +124,7 @@
         if (projectTitle) {
             projectTitleEl.textContent = projectTitle;
         } else {
-            projectTitleEl.textContent = "All Images";
+            projectTitleEl.textContent = "All Projects";
         }
 
         if (typeof projects !== 'undefined') {
@@ -112,10 +142,23 @@
                         const imageItem = document.createElement('div');
                         imageItem.classList.add('image-item');
 
+                        const title = document.createElement('h3');
+                        title.classList.add('image-title');
+                        title.textContent = image.name;
+
                         const img = document.createElement('img');
                         img.src = image.image;
 
+                        imageItem.appendChild(title);
                         imageItem.appendChild(img);
+
+                        if (image.description) {
+                            const description = document.createElement('p');
+                            description.classList.add('image-description');
+                            description.textContent = image.description;
+                            imageItem.appendChild(description);
+                        }
+
                         imageContainer.appendChild(imageItem);
                     });
                 }
