@@ -69,8 +69,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10vh;
-            padding: 5vh 0;
+            gap: 5vh;
+            padding: 5vh 2rem;
         }
         .image-item {
             display: flex;
@@ -98,6 +98,50 @@
             margin-top: 1rem;
             max-width: 70vw;
             text-align: center;
+        }
+        .group-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 4rem;
+        }
+        .group-header {
+            background-color: #fafafa;
+            border-left: 5px solid #e52e71;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .group-title {
+            font-family: 'Berkshire Swash', cursive;
+            font-size: 2.5rem;
+            color: #333;
+            margin: 0 0 1rem 0;
+        }
+        .group-description {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .grid-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .grid-image-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -127,6 +171,88 @@
             projectTitleEl.textContent = "All Projects";
         }
 
+        function renderStandard(project) {
+            if (project.images && project.images.length > 0) {
+                project.images.forEach(image => {
+                    const imageItem = document.createElement('div');
+                    imageItem.classList.add('image-item');
+
+                    const title = document.createElement('h3');
+                    title.classList.add('image-title');
+                    title.textContent = image.name;
+
+                    const img = document.createElement('img');
+                    img.src = image.image;
+
+                    imageItem.appendChild(title);
+                    imageItem.appendChild(img);
+
+                    if (image.description) {
+                        const description = document.createElement('p');
+                        description.classList.add('image-description');
+                        description.textContent = image.description;
+                        imageItem.appendChild(description);
+                    }
+
+                    imageContainer.appendChild(imageItem);
+                });
+            }
+        }
+
+        function renderGrouped(project) {
+            const imagesByGroup = project.images.reduce((acc, image) => {
+                const groupKey = image.group || 'ungrouped';
+                if (!acc[groupKey]) {
+                    acc[groupKey] = [];
+                }
+                acc[groupKey].push(image);
+                return acc;
+            }, {});
+
+            for (const groupKey in imagesByGroup) {
+                const groupContainer = document.createElement('div');
+                groupContainer.classList.add('group-container');
+                
+                const groupInfo = project.groups[groupKey];
+                if (groupInfo && (groupInfo.title || groupInfo.description)) {
+                    const groupHeader = document.createElement('div');
+                    groupHeader.classList.add('group-header');
+                    
+                    if(groupInfo.title) {
+                        const groupTitle = document.createElement('h2');
+                        groupTitle.classList.add('group-title');
+                        groupTitle.textContent = groupInfo.title;
+                        groupHeader.appendChild(groupTitle);
+                    }
+                    
+                    if(groupInfo.description) {
+                        const groupDescription = document.createElement('p');
+                        groupDescription.classList.add('group-description');
+                        groupDescription.textContent = groupInfo.description;
+                        groupHeader.appendChild(groupDescription);
+                    }
+                    
+                    groupContainer.appendChild(groupHeader);
+                }
+
+                const imageGrid = document.createElement('div');
+                imageGrid.classList.add('image-grid');
+
+                imagesByGroup[groupKey].forEach(image => {
+                    const imageItem = document.createElement('div');
+                    imageItem.classList.add('grid-image-item');
+
+                    const img = document.createElement('img');
+                    img.src = image.image;
+
+                    imageItem.appendChild(img);
+                    imageGrid.appendChild(imageItem);
+                });
+                groupContainer.appendChild(imageGrid);
+                imageContainer.appendChild(groupContainer);
+            }
+        }
+
         if (typeof projects !== 'undefined') {
             const projectsToDisplay = projectTitle
                 ? projects.filter(p => p.project.title === projectTitle)
@@ -137,31 +263,12 @@
                 projectDescriptionEl.textContent = project.project.description;
                 projectDetailEl.textContent = project.project.detail;
 
-                if (project.images && project.images.length > 0) {
-                    project.images.forEach(image => {
-                        const imageItem = document.createElement('div');
-                        imageItem.classList.add('image-item');
-
-                        const title = document.createElement('h3');
-                        title.classList.add('image-title');
-                        title.textContent = image.name;
-
-                        const img = document.createElement('img');
-                        img.src = image.image;
-
-                        imageItem.appendChild(title);
-                        imageItem.appendChild(img);
-
-                        if (image.description) {
-                            const description = document.createElement('p');
-                            description.classList.add('image-description');
-                            description.textContent = image.description;
-                            imageItem.appendChild(description);
-                        }
-
-                        imageContainer.appendChild(imageItem);
-                    });
+                if (project.groups) {
+                    renderGrouped(project);
+                } else {
+                    renderStandard(project);
                 }
+
             } else {
                  imageContainer.innerHTML = `<p>No project found with title: ${projectTitle}</p>`;
             }
