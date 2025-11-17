@@ -263,7 +263,7 @@
                 projectDescriptionEl.textContent = project.project.description;
                 projectDetailEl.textContent = project.project.detail;
 
-                if (project.groups) {
+                if (project.groups && Object.keys(project.groups).length > 0) {
                     renderGrouped(project);
                 } else {
                     renderStandard(project);
