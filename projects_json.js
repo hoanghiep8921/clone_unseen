@@ -171,12 +171,12 @@ let projects = [{
     },
     {
         "name": "delusion",
-        "image": "wp-content\/uploads\/art-digital\/paint\/delu3.HEIC",
+        "image": "wp-content\/uploads\/art-digital\/paint\/delu3.jpg",
         "group": "nhom10"
     },
     {
         "name": "delusion",
-        "image": "wp-content\/uploads\/art-digital\/paint\/delu4.HEIC",
+        "image": "wp-content\/uploads\/art-digital\/paint\/delu4.jpg",
         "group": "nhom10"
     },
     {
