@@ -91,7 +91,7 @@ let projects = [{
         },
         "nhom21": {
             "title": "SCULPTURE",
-            "description": "I stayed up late into the night, twisting wires in my hands. Around me, my desk was scattered with odds and ends - things I had held onto for no reason other than a faint faith that one day they might be useful. When I began this mixed-media sculpture, I realized that all this time, I had been searching for a way to breathe life back into the things my family usually discards.I used spare coins from my parents’ business trips, threads from a failed embroidery project I tried back in middle school, foil paper, a plastic bag—whatever I could find. Using these everyday objects makes the process feel playful and intimate, like I’m weaving the love I’ve kept for these small things into something new. Every piece becomes a little world of hope and care, recycled not just in material but in spirit. It’s like each sculpture is full of love, and I get to pour mine into it."
+            "description": "",
         }
     },
     "images": [{
@@ -277,21 +277,6 @@ let projects = [{
         "image": "wp-content\/uploads\/art-digital\/paint\/scu1.jpg",
         "group": "nhom21"
     },
-    {
-        "name": "SCULPTURE",
-        "image": "wp-content\/uploads\/art-digital\/paint\/scu2.jpg",
-        "group": "nhom21"
-    },
-    {
-        "name": "SCULPTURE",
-        "image": "wp-content\/uploads\/art-digital\/paint\/scu3.jpg",
-        "group": "nhom21"
-    },
-    {
-        "name": "SCULPTURE",
-        "image": "wp-content\/uploads\/art-digital\/paint\/scu4.jpg",
-        "group": "nhom21"
-    },
 ]
 },
 {
@@ -299,7 +284,7 @@ let projects = [{
                 "0internal_or_external": "0",
                 "project_grid_category": ["digital"],
                 "description": "Mixed media sculpture",
-                "detail":"I use the remnants of failed artistic pursuits and the colorful, forgotten objects my family hoards in my sculptures - turning accumulation into appreciation, and a tangible chronicle of my commitment to art.",
+                "detail":"I stayed up late into the night, twisting wires in my hands. Around me, my desk was scattered with odds and ends - things I had held onto for no reason other than a faint faith that one day they might be useful. When I began this mixed-media sculpture, I realized that all this time, I had been searching for a way to breathe life back into the things my family usually discards.I used spare coins from my parents’ business trips, threads from a failed embroidery project I tried back in middle school, foil paper, a plastic bag—whatever I could find. Using these everyday objects makes the process feel playful and intimate, like I’m weaving the love I’ve kept for these small things into something new. Every piece becomes a little world of hope and care, recycled not just in material but in spirit. It’s like each sculpture is full of love, and I get to pour mine into it",
                 "title": "SCULPTURE",
                 "link": ""
             },
@@ -409,6 +394,36 @@ let projects = [{
             },{
                 "name": "10",
                 "image": "wp-content\/uploads\/art-digital\/sculpture\/10.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "10",
+                "image": "wp-content\/uploads\/art-digital\/paint\/scu2.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "12",
+                "image": "wp-content\/uploads\/art-digital\/paint\/scu3.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "13",
+                "image": "wp-content\/uploads\/art-digital\/paint\/scu4.jpg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
