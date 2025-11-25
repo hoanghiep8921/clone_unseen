@@ -270,13 +270,7 @@ let projects = [{
         "name": "passtime",
         "image": "wp-content\/uploads\/art-digital\/paint\/passtime4.jpg",
         "group": "nhom20"
-    },
-
-    {
-        "name": "SCULPTURE",
-        "image": "wp-content\/uploads\/art-digital\/paint\/scu1.jpg",
-        "group": "nhom21"
-    },
+    }
 ]
 },
 {
@@ -403,6 +397,16 @@ let projects = [{
                 }
             },{
                 "name": "10",
+                "image": "wp-content\/uploads\/art-digital\/paint\/scu1.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "11",
                 "image": "wp-content\/uploads\/art-digital\/paint\/scu2.jpg",
                 "image_size": [1024, 538],
                 "type": "image",
