@@ -273,6 +273,349 @@ let projects = [{
     }
 ]
 },
+
+        {
+            "project": {
+                "0internal_or_external": "0",
+                "project_grid_category": ["digital"],
+                "description": "Cheekbones Exibition",
+                "detail":"When my friends came to see the exhibition, they started laughing in front of the paintings. It's the kind of laughter that means they saw themselves. “This is me when I miss the bus.” “This is me when I fail math.” I couldn’t stop smiling. I’d spent so long polishing the meanings behind my works, worried that they might come off as shallow. Yet they reached people in the simplest way. It made me happy that my art connected our experiences. And it evoked something unique in them like they did in me. I realized that maybe the point of my art is not about sophisticated me. It’s about all of us. Cheekbones: Hidden Graces sprouted from my personal reflection on how our selfhood reacts under pressure. After the war, everything was focused on rebuilding the economy. Then came meritocracy - that shiny promise of rapid progress. But the longer I looked around, the more I saw that same system eating away at individuality. Everyone’s striving, but not everyone’s living. I’ve always been drawn to distortion. Perhaps it feels honest. I learned a lot from artists like Đinh Ý Nhi and Francis Bacon, whose disfigurements commanded attention. I work with gouache and oil pastels because they let me be messy and fluid. For sculptures, I use whatever carries memory: wires, clay, threads. Things people usually overlook. Repurposing them feels like a hopeful future where what’s forgotten can still be rediscovered and cherished.",
+                "title": "Cheekbones Exibition",
+                "link": ""
+            },
+            "0internal": {
+                "or": {
+                    "external": 0
+                }
+            },
+            "external": {
+                "project": {
+                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+                    "description": "Cheekbones Exibition",
+                    "detail":"When my friends came to see the exhibition, they started laughing in front of the paintings. It's the kind of laughter that means they saw themselves. “This is me when I miss the bus.” “This is me when I fail math.” I couldn’t stop smiling. I’d spent so long polishing the meanings behind my works, worried that they might come off as shallow. Yet they reached people in the simplest way. It made me happy that my art connected our experiences. And it evoked something unique in them like they did in me. I realized that maybe the point of my art is not about sophisticated me. It’s about all of us. Cheekbones: Hidden Graces sprouted from my personal reflection on how our selfhood reacts under pressure. After the war, everything was focused on rebuilding the economy. Then came meritocracy - that shiny promise of rapid progress. But the longer I looked around, the more I saw that same system eating away at individuality. Everyone’s striving, but not everyone’s living. I’ve always been drawn to distortion. Perhaps it feels honest. I learned a lot from artists like Đinh Ý Nhi and Francis Bacon, whose disfigurements commanded attention. I work with gouache and oil pastels because they let me be messy and fluid. For sculptures, I use whatever carries memory: wires, clay, threads. Things people usually overlook. Repurposing them feels like a hopeful future where what’s forgotten can still be rediscovered and cherished.",
+                    "name": "Cheekbones Exibition",
+                    "url": ""
+                }
+            },
+            "images": [{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/0.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/1.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/2.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/3.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/4.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/5.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/6.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/7.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/8.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/9.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/10.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/11.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/12.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/13.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/14.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/15.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/16.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/17.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/18.jpg",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/19.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/20.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/21.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/22.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/23.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/24.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/25.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/26.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/27.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/28.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/29.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },{
+                "name": "1",
+                "image": "wp-content\/uploads\/art-digital\/cheekbones\/30.JPG",
+                "image_size": [1024, 538],
+                "type": "image",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                }
+            },],
+            "internal": {
+                "or": {
+                    "external": 1
+                }
+            },
+            "models": false
+        },
+
 {
             "project": {
                 "0internal_or_external": "0",
@@ -677,7 +1020,7 @@ let projects = [{
             },
             "images": [{
                 "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/1.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/1.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -687,7 +1030,7 @@ let projects = [{
                 }
             },{
                 "name": "2",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/2.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/2.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -697,7 +1040,7 @@ let projects = [{
                 }
             },{
                 "name": "3",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/3.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/3.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -707,7 +1050,7 @@ let projects = [{
                 }
             },{
                 "name": "4",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/4.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/4.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -717,7 +1060,7 @@ let projects = [{
                 }
             },{
                 "name": "5",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/5.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/5.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -727,7 +1070,7 @@ let projects = [{
                 }
             },{
                 "name": "6",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/6.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/6.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -737,7 +1080,7 @@ let projects = [{
                 }
             },{
                 "name": "7",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/7.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/7.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -747,7 +1090,7 @@ let projects = [{
                 }
             },{
                 "name": "8",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/8.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/8.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -757,7 +1100,7 @@ let projects = [{
                 }
             },{
                 "name": "9",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/9.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/9.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -767,7 +1110,7 @@ let projects = [{
                 }
             },{
                 "name": "10",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/10.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/10.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -777,7 +1120,7 @@ let projects = [{
                 }
             },{
                 "name": "11",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/11.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/11.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -787,7 +1130,7 @@ let projects = [{
                 }
             },{
                 "name": "12",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/12.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/12.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -797,7 +1140,7 @@ let projects = [{
                 }
             },{
                 "name": "13",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/13.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/13.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -807,7 +1150,7 @@ let projects = [{
                 }
             },{
                 "name": "14",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/14.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/14.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -817,7 +1160,7 @@ let projects = [{
                 }
             },{
                 "name": "15",
-                "image": "wp-content\/uploads\/art-digital\/traditional\/15.JPG",
+                "image": "wp-content\/uploads\/art-digital\/traditional\/15.jpeg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -942,107 +1285,109 @@ let projects = [{
                 }
             },
             "models": false
-        },{
-            "project": {
-                "0internal_or_external": "0",
-                "project_grid_category": ["digital"],
-                "description": "Conceptual painting",
-                "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
-                "title": "GRAPHITE DRAWINGS",
-                "link": ""
-            },
-            "0internal": {
-                "or": {
-                    "external": 0
-                }
-            },
-            "external": {
-                "project": {
-                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
-                    "description": "Conceptual painting",
-                    "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
-                    "name": "GRAPHITE DRAWINGS",
-                    "url": ""
-                }
-            },
-            "images": [{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/draw\/1.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "2",
-                "image": "wp-content\/uploads\/art-digital\/draw\/2.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "3",
-                "image": "wp-content\/uploads\/art-digital\/draw\/3.PNG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "4",
-                "image": "wp-content\/uploads\/art-digital\/draw\/4.PNG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "5",
-                "image": "wp-content\/uploads\/art-digital\/draw\/5.PNG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "6",
-                "image": "wp-content\/uploads\/art-digital\/draw\/6.PNG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "7",
-                "image": "wp-content\/uploads\/art-digital\/draw\/7.PNG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            }],
-            "internal": {
-                "or": {
-                    "external": 1
-                }
-            },
-            "models": false
-        },{
+        },
+        // {
+        //     "project": {
+        //         "0internal_or_external": "0",
+        //         "project_grid_category": ["digital"],
+        //         "description": "Conceptual painting",
+        //         "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+        //         "title": "GRAPHITE DRAWINGS",
+        //         "link": ""
+        //     },
+        //     "0internal": {
+        //         "or": {
+        //             "external": 0
+        //         }
+        //     },
+        //     "external": {
+        //         "project": {
+        //             "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
+        //             "description": "Conceptual painting",
+        //             "detail":"I pursue conceptual art to weave Vietnamese folklore into contemporary critique. Just like how those stories hid complex commentaries beneath a whimsical plotline, my work builds layers of meaning, using imagery to expose societal issues and invite discussions. As views dissect the imagery, the complexity hidden within the stories we tell and the world around us reveals itself.",
+        //             "name": "GRAPHITE DRAWINGS",
+        //             "url": ""
+        //         }
+        //     },
+        //     "images": [{
+        //         "name": "1",
+        //         "image": "wp-content\/uploads\/art-digital\/draw\/1.JPG",
+        //         "image_size": [1024, 538],
+        //         "type": "image",
+        //         "position": {
+        //             "x": 0,
+        //             "y": 0,
+        //             "z": 0
+        //         }
+        //     },{
+        //         "name": "2",
+        //         "image": "wp-content\/uploads\/art-digital\/draw\/2.JPG",
+        //         "image_size": [1024, 538],
+        //         "type": "image",
+        //         "position": {
+        //             "x": 0,
+        //             "y": 0,
+        //             "z": 0
+        //         }
+        //     },{
+        //         "name": "3",
+        //         "image": "wp-content\/uploads\/art-digital\/draw\/3.PNG",
+        //         "image_size": [1024, 538],
+        //         "type": "image",
+        //         "position": {
+        //             "x": 0,
+        //             "y": 0,
+        //             "z": 0
+        //         }
+        //     },{
+        //         "name": "4",
+        //         "image": "wp-content\/uploads\/art-digital\/draw\/4.PNG",
+        //         "image_size": [1024, 538],
+        //         "type": "image",
+        //         "position": {
+        //             "x": 0,
+        //             "y": 0,
+        //             "z": 0
+        //         }
+        //     },{
+        //         "name": "5",
+        //         "image": "wp-content\/uploads\/art-digital\/draw\/5.PNG",
+        //         "image_size": [1024, 538],
+        //         "type": "image",
+        //         "position": {
+        //             "x": 0,
+        //             "y": 0,
+        //             "z": 0
+        //         }
+        //     },{
+        //         "name": "6",
+        //         "image": "wp-content\/uploads\/art-digital\/draw\/6.PNG",
+        //         "image_size": [1024, 538],
+        //         "type": "image",
+        //         "position": {
+        //             "x": 0,
+        //             "y": 0,
+        //             "z": 0
+        //         }
+        //     },{
+        //         "name": "7",
+        //         "image": "wp-content\/uploads\/art-digital\/draw\/7.PNG",
+        //         "image_size": [1024, 538],
+        //         "type": "image",
+        //         "position": {
+        //             "x": 0,
+        //             "y": 0,
+        //             "z": 0
+        //         }
+        //     }],
+        //     "internal": {
+        //         "or": {
+        //             "external": 1
+        //         }
+        //     },
+        //     "models": false
+        // },
+        {
             "project": {
                 "0internal_or_external": "0",
                 "project_grid_category": ["digital"],
@@ -1212,347 +1557,8 @@ let projects = [{
                 }
             },
             "models": false
-        },{
-            "project": {
-                "0internal_or_external": "0",
-                "project_grid_category": ["digital"],
-                "description": "Cheekbones Exibition",
-                "detail":"When my friends came to see the exhibition, they started laughing in front of the paintings. It's the kind of laughter that means they saw themselves. “This is me when I miss the bus.” “This is me when I fail math.” I couldn’t stop smiling. I’d spent so long polishing the meanings behind my works, worried that they might come off as shallow. Yet they reached people in the simplest way. It made me happy that my art connected our experiences. And it evoked something unique in them like they did in me. I realized that maybe the point of my art is not about sophisticated me. It’s about all of us. Cheekbones: Hidden Graces sprouted from my personal reflection on how our selfhood reacts under pressure. After the war, everything was focused on rebuilding the economy. Then came meritocracy - that shiny promise of rapid progress. But the longer I looked around, the more I saw that same system eating away at individuality. Everyone’s striving, but not everyone’s living. I’ve always been drawn to distortion. Perhaps it feels honest. I learned a lot from artists like Đinh Ý Nhi and Francis Bacon, whose disfigurements commanded attention. I work with gouache and oil pastels because they let me be messy and fluid. For sculptures, I use whatever carries memory: wires, clay, threads. Things people usually overlook. Repurposing them feels like a hopeful future where what’s forgotten can still be rediscovered and cherished.",
-                "title": "Cheekbones Exibition",
-                "link": ""
-            },
-            "0internal": {
-                "or": {
-                    "external": 0
-                }
-            },
-            "external": {
-                "project": {
-                    "categories": "a:1:{i:0;s:7:\u0022digital\u0022;}",
-                    "description": "Cheekbones Exibition",
-                    "detail":"When my friends came to see the exhibition, they started laughing in front of the paintings. It's the kind of laughter that means they saw themselves. “This is me when I miss the bus.” “This is me when I fail math.” I couldn’t stop smiling. I’d spent so long polishing the meanings behind my works, worried that they might come off as shallow. Yet they reached people in the simplest way. It made me happy that my art connected our experiences. And it evoked something unique in them like they did in me. I realized that maybe the point of my art is not about sophisticated me. It’s about all of us. Cheekbones: Hidden Graces sprouted from my personal reflection on how our selfhood reacts under pressure. After the war, everything was focused on rebuilding the economy. Then came meritocracy - that shiny promise of rapid progress. But the longer I looked around, the more I saw that same system eating away at individuality. Everyone’s striving, but not everyone’s living. I’ve always been drawn to distortion. Perhaps it feels honest. I learned a lot from artists like Đinh Ý Nhi and Francis Bacon, whose disfigurements commanded attention. I work with gouache and oil pastels because they let me be messy and fluid. For sculptures, I use whatever carries memory: wires, clay, threads. Things people usually overlook. Repurposing them feels like a hopeful future where what’s forgotten can still be rediscovered and cherished.",
-                    "name": "Cheekbones Exibition",
-                    "url": ""
-                }
-            },
-            "images": [{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/0.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/1.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/2.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/3.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/4.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/5.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/6.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/7.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/8.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/9.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/10.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/11.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/12.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/13.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/14.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/15.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/16.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/17.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/18.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/19.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/20.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/21.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/22.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/23.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/24.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/25.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/26.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/27.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/28.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/29.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "1",
-                "image": "wp-content\/uploads\/art-digital\/cheekbones\/30.JPG",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },],
-            "internal": {
-                "or": {
-                    "external": 1
-                }
-            },
-            "models": false
-        },{
+        },
+        {
             "project": {
                 "0internal_or_external": "0",
                 "project_grid_category": ["branding"],
@@ -1709,16 +1715,6 @@ let projects = [{
             },{
                 "name": "6",
                 "image": "wp-content\/uploads\/extra-branding\/thanhvinhhoa\/6.jpg",
-                "image_size": [1024, 538],
-                "type": "image",
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },{
-                "name": "7",
-                "image": "wp-content\/uploads\/extra-branding\/thanhvinhhoa\/7.jpg",
                 "image_size": [1024, 538],
                 "type": "image",
                 "position": {
@@ -2638,7 +2634,7 @@ let projects = [{
                 "0internal_or_external": "0",
                 "project_grid_category": ["motion"],
                 "description": "WORK EXPERIENCE",
-                "detail":"",
+                "detail":"Lately, I have been captivated by the ways traditional Vietnamese instruments are being modernized. I remember a concert where the đàn bầu emitted electric guitar–like sounds in Trống Cơm, and sáo mèo carried the driving melody in Chiếc Khăn Piêu. The performance drew young people from all our diverse ethnicities into a shared space of appreciation and joy.This experience sparked my curiosity about how ethnic music carries stories, traditions, and values across Vietnamese communities. I realized that through exchanging music, we are also exchanging culture, learning deeply about one another’s histories and identities.To explore this further, I interned at the Vietnam Museum of Ethnology, seeking to understand the power of music. There, I created thirty gouache paintings on poonah paper depicting instruments from various regions and ethnic groups, highlighting the richness and uniqueness of Vietnamese cultural identity. I also produced colorless works portraying the music and dance festivals of the Muong people, which were distributed alongside zodiac animal prints to engage children and parents alike in these traditions. Watching children spark questions and conversations, I felt a profound pride not just in my work, but in the realization that my art could foster appreciation and connection. Through this journey, I came to understand that my art has power: the power to share, to educate, and to celebrate the diverse stories that shape who we are.",
                 "title": "WORK EXPERIENCE",
                 "link": ""
             },
@@ -2651,7 +2647,7 @@ let projects = [{
                 "project": {
                     "categories": "a:1:{i:0;s:7:\u0022motion\u0022;}",
                     "description": "TRANH NHAC CU - CO THE GHEP LUON VOI WORK EXPERIENCE O BAO TANG O AH",
-                    "detail":"Lately, I have been captivated by the ways traditional Vietnamese instruments are being modernized. I remember a concert where the đàn bầu emitted electric guitar–like sounds in Trống Cơm, and sáo mèo carried the driving melody in Chiếc Khăn Piêu. The performance drew young people from all our diverse ethnicities into a shared space of appreciation and joy.This experience sparked my curiosity about how ethnic music carries stories, traditions, and values across Vietnamese communities. I realized that through exchanging music, we are also exchanging culture, learning deeply about one another’s histories and identities.To explore this further, I interned at the Vietnam Museum of Ethnology, seeking to understand the power of music. There, I created thirty gouache paintings on poonah paper depicting instruments from various regions and ethnic groups, highlighting the richness and uniqueness of Vietnamese cultural identity. I also produced colorless works portraying the music and dance festivals of the Muong people, which were distributed alongside zodiac animal prints to engage children and parents alike in these traditions. Watching children spark questions and conversations, I felt a profound pride not just in my work, but in the realization that my art could foster appreciation and connection.Through this journey, I came to understand that my art has power: the power to share, to educate, and to celebrate the diverse stories that shape who we are.",
+                    "detail":"Lately, I have been captivated by the ways traditional Vietnamese instruments are being modernized. I remember a concert where the đàn bầu emitted electric guitar–like sounds in Trống Cơm, and sáo mèo carried the driving melody in Chiếc Khăn Piêu. The performance drew young people from all our diverse ethnicities into a shared space of appreciation and joy.This experience sparked my curiosity about how ethnic music carries stories, traditions, and values across Vietnamese communities. I realized that through exchanging music, we are also exchanging culture, learning deeply about one another’s histories and identities.To explore this further, I interned at the Vietnam Museum of Ethnology, seeking to understand the power of music. There, I created thirty gouache paintings on poonah paper depicting instruments from various regions and ethnic groups, highlighting the richness and uniqueness of Vietnamese cultural identity. I also produced colorless works portraying the music and dance festivals of the Muong people, which were distributed alongside zodiac animal prints to engage children and parents alike in these traditions. Watching children spark questions and conversations, I felt a profound pride not just in my work, but in the realization that my art could foster appreciation and connection. Through this journey, I came to understand that my art has power: the power to share, to educate, and to celebrate the diverse stories that shape who we are.",
                     "name": "WORK EXPERIENCE",
                     "url": ""
                 }
