@@ -153,7 +153,7 @@
             x: e.changedTouches ? e.changedTouches[0].clientX : e.clientX,
             y: e.changedTouches ? e.changedTouches[0].clientY : e.clientY,
           }),
-            (o.mouse.x = this.mousePos.x),
+            /* (o.mouse.x = this.mousePos.x),
             (o.mouse.y = this.mousePos.y),
             o.mouse.gl.set(
               this.mousePos.x - o.window.w / 2,
@@ -166,7 +166,7 @@
             o.mouse.glScreenSpace.set(
               this.mousePos.x / o.window.w,
               1 - this.mousePos.y / o.window.h
-            ),
+            ), */
             n.emit(o.events.MOUSEMOVE, {
               mousePos: this.mousePos,
               event: e,
@@ -14179,8 +14179,8 @@
             this.geometry.setAttribute(
               'aUvOffset',
               new s.lb7(new Float32Array(r), 2)
-            ),
-            n.on(o.events.MOUSEMOVE, this.onMouseMove)
+            )
+            // n.on(o.events.MOUSEMOVE, this.onMouseMove)
         }
         update() {
           this.positionSim.uniforms.u_screenResolution.value.set(
